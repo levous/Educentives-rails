@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  long_description: MyText
+  point_value: 1
+  plan_id: 1
+
+two:
+  title: MyString
+  long_description: MyText
+  point_value: 1
+  plan_id: 1

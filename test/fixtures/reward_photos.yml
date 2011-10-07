@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  url_path: 1
+  reward_id: 1
+
+two:
+  title: MyString
+  url_path: 1
+  reward_id: 1

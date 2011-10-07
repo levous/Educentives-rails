@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Source</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="content-wrapper">
+		<div id="header"><div id="logo"></div></div>
+		<div id="content">
+			<div id="content-header">
+				<%= link_to "Goals", :controller => :goals, :action => :index %>
+				<div id="flash_notice" style="display:none"></div>
+			</div>
+			<div id="content-main">
+			<%= yield %>
+			</div>
+			<div class="clearer"></div>
+			
+		</div>
+		<div id="footer">
+			
+		</div>
+	</div>
+</body>
+</html>

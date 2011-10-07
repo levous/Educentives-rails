@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Targetdate:</b>
+  <%= @plan.targetDate %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @plan.title %>
+</p>
+
+<p>
+  <b>Student:</b>
+  <%= @plan.student_id %>
+</p>
+
+<p>
+  <b>Teacher:</b>
+  <%= @plan.teacher_id %>
+</p>
+
+<p>
+  <b>Sponsorship:</b>
+  <%= @plan.sponsorship_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

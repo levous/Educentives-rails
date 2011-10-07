@@ -1,0 +1,31 @@
+<h1>Listing plans</h1>
+
+<table>
+  <tr>
+    <th>Targetdate</th>
+    <th>Title</th>
+    <th>Student</th>
+    <th>Teacher</th>
+    <th>Sponsorship</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plans.each do |plan| %>
+  <tr>
+    <td><%= plan.targetDate %></td>
+    <td><%= plan.title %></td>
+    <td><%= plan.student_id %></td>
+    <td><%= plan.teacher_id %></td>
+    <td><%= plan.sponsorship_id %></td>
+    <td><%= link_to 'Show', plan %></td>
+    <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+    <td><%= link_to 'Destroy', plan, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plan', new_plan_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  targetDate: 2011-09-07
+  title: MyString
+  student_id: 1
+  teacher_id: 1
+  sponsorship_id: 1
+
+two:
+  targetDate: 2011-09-07
+  title: MyString
+  student_id: 1
+  teacher_id: 1
+  sponsorship_id: 1

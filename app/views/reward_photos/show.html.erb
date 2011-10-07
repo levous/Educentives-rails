@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @reward_photo.title %>
+</p>
+
+<p>
+  <b>Url path:</b>
+  <%= @reward_photo.url_path %>
+</p>
+
+<p>
+  <b>Reward:</b>
+  <%= @reward_photo.reward_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_reward_photo_path(@reward_photo) %> |
+<%= link_to 'Back', reward_photos_path %>

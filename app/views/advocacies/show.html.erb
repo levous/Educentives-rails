@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Relationship:</b>
+  <%= @advocacy.relationship %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%= @advocacy.person_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_advocacy_path(@advocacy) %> |
+<%= link_to 'Back', advocacies_path %>

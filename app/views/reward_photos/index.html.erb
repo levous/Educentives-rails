@@ -1,0 +1,27 @@
+<h1>Listing reward_photos</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url path</th>
+    <th>Reward</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reward_photos.each do |reward_photo| %>
+  <tr>
+    <td><%= reward_photo.title %></td>
+    <td><%= reward_photo.url_path %></td>
+    <td><%= reward_photo.reward_id %></td>
+    <td><%= link_to 'Show', reward_photo %></td>
+    <td><%= link_to 'Edit', edit_reward_photo_path(reward_photo) %></td>
+    <td><%= link_to 'Destroy', reward_photo, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reward photo', new_reward_photo_path %>

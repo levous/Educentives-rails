@@ -1,0 +1,33 @@
+<h1>Listing milestones</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Long description</th>
+    <th>Point value</th>
+    <th>Target date</th>
+    <th>Completed at</th>
+    <th>Goal</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @milestones.each do |milestone| %>
+  <tr>
+    <td><%= milestone.title %></td>
+    <td><%= milestone.long_description %></td>
+    <td><%= milestone.point_value %></td>
+    <td><%= milestone.target_datetime %></td>
+    <td><%= milestone.completed_at %></td>
+    <td><%= milestone.goal_id %></td>
+    <td><%= link_to 'Show', milestone %></td>
+    <td><%= link_to 'Edit', edit_milestone_path(milestone) %></td>
+    <td><%= link_to 'Destroy', milestone, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Milestone', new_milestone_path %>
