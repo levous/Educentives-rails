@@ -1,5 +1,5 @@
 rails new educentives
-# Initial scaffold for Educentives
+# Initial scaffold for Educentives baaby
 cd source
 # Goal - the thing we're striving to accomplish
 #  has_many :milestones 
