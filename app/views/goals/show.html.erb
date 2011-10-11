@@ -36,11 +36,13 @@
 <h2>Add a Milestone:</h2>
 <!-- This should be a partial -->
 <%= form_for(@goal.milestones.build, :remote => true) do |f| %>
+  <div id= "milestone_errors" style="display:none"></div>
+
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
- <div class="field">
+  <div class="field">
     <%= f.label :long_description %><br />
     <%= f.text_area :long_description %>
   </div>

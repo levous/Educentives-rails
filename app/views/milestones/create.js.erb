@@ -1,0 +1,27 @@
+
+
+<% if @milestone.errors.any? -%>
+  /*Hide the flash notice div*/
+  $("#flash_notice").hide(300);
+
+  /*Update the html of the div post_errors with the new one*/
+  $("#milestone_errors").html("<%= escape_javascript(error_messages_for(@milestone))%>");
+
+  /*Show the div post_errors*/
+  $("#milestone_errors").show(300);
+<% else -%>
+  /*Hide the div post_errors*/
+  $("#milestone_errors").hide(300);
+
+  /*Update the html of the div flash_notice with the new one*/
+  $("#flash_notice").html("<%= escape_javascript(flash[:notice])%>");
+
+  /*Show the flash_notice div*/
+  $("#flash_notice").show(300);
+
+  /*Clear the entire form*/
+  $(":input:not(input[type=submit])").val("");
+
+  alert('yippee');
+
+<% end -%>

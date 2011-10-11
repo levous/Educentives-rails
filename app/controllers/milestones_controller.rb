@@ -43,11 +43,12 @@ class MilestonesController < ApplicationController
     @milestone = Milestone.new(params[:milestone])
     # @goal = Goal.find(params[:goal_id])
     # redirect_to post_path(@goal)
-
+    flash[:notice] = "Successfully created milestone."
     respond_to do |format|
       if @milestone.save
          format.html { redirect_to @milestone, notice: 'Milestone was successfully created.' }
          format.json { render json: @milestone, status: :created, location: @milestone }
+         format.js # return create.js.erb
        else
          format.html { render action: "new" }
          format.json { render json: @milestone.errors, status: :unprocessable_entity }
