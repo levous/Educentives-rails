@@ -22,6 +22,7 @@
   /*Clear the entire form*/
   $(":input:not(input[type=submit])").val("");
 
-  alert('yippee');
+  /* Append new milestone to milestones list and fade in */
+  $("#milestones").append($("<%= escape_javascript( render @milestone ) %>").fadeIn());
 
 <% end -%>

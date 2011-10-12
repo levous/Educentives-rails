@@ -20,6 +20,8 @@ Source::Application.routes.draw do
   resources :milestones
 
   resources :goals
+  
+  resources :goal, :has_many => [:milestones]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

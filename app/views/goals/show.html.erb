@@ -31,8 +31,10 @@
 </p>
 
 <h3>Milestones</h3>
-<%= render @goal.milestones %>
- 
+<div id="milestones">
+	<%= render @goal.milestones %>
+</div>
+
 <h2>Add a Milestone:</h2>
 <!-- This should be a partial -->
 <%= form_for(@goal.milestones.build, :remote => true) do |f| %>
