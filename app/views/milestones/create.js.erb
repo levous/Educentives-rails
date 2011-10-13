@@ -22,7 +22,11 @@
   /*Clear the entire form*/
   $(":input:not(input[type=submit])").val("");
 
-  /* Append new milestone to milestones list and fade in */
-  $("#milestones").append($("<%= escape_javascript( render @milestone ) %>").fadeIn());
+  /* Append new milestone to milestones list, fade in,then highlight */
+  $("#milestones").append($("<%= escape_javascript( render @milestone ) %>").css("backgroundColor", "yellow").fadeIn(500,function(){
+	$(this).effect("highlight", {color:"red"}, 3000); //<< not working?
+  }));
+
+
 
 <% end -%>

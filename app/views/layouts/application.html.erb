@@ -10,9 +10,18 @@
 	<div id="content-wrapper">
 		<div id="header"><div id="logo"></div></div>
 		<div id="content">
+			<nav>
+			<ul>
+				<li><%= link_to "Goals", :controller => :goals, :action => :index %></li>
+				<li><a href="#">another link</a></li>
+				<li><a href="#">another link</a></li>
+				<li><a href="http://dribbble.com/shots/186151-TwoSIX">Style These</a></li>
+				
+			</ul>
+			</nav>
 			<div id="content-header">
 				
-				<%= link_to "Goals", :controller => :goals, :action => :index %>
+				
 				<div id="flash_notice" style="display:none"></div>
 			</div>
 			<div id="content-main">

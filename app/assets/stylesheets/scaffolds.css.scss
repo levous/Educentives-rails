@@ -1,4 +1,6 @@
 $light-blue: #CEF0FF;
+$med-blue: #74839F;
+$dark-blue: #18204C;
 
 body {
   background: url(/assets/background/linen-tile-medium.png) #888;
@@ -13,7 +15,7 @@ H2 {
 }
 
 h1, h2, h3, h4, h5{
-	color:#000;
+	color:#666;
     font-family: "minion-pro-1","minion-pro-2",Georgia,"Times New Roman",serif;
 	font-style: normal;
     font-weight: 500;
@@ -30,13 +32,13 @@ h1, h2, h3, h4, h5{
   margin:0 auto;
   width:1000px;
   background: none repeat scroll 0 0 $light-blue;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 10px;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
   position:relative;}
 
 #content-main{
   background: none repeat scroll 0 0 #FFFFFF;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 10px;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
   display: inline-block;
   float: left;
@@ -51,8 +53,92 @@ h1, h2, h3, h4, h5{
 	width: 1000px;
 	margin:8px auto;
 	border:solid 1px $light-blue;
-	border-radius: 5px 5px 5px 5px;
+	border-radius: 10px;
 	min-height:10px;
+}
+
+#flash_notice{
+	border: 2px solid red;
+	border-radius:8px;
+	text-align: center;
+	margin: 10px;
+	padding: 5px 20px;
+	color:red;
+	font-size:1.2em;
+	display: inline-block;
+	background-color:white;
+	box-shadow: 2px 2px 5px #888;
+}
+
+nav{
+	position:relative;
+}
+
+nav ul{
+
+	float:right;
+	margin: 5px;
+	padding: 0;
+	width: 348px;
+	list-style-type:none;
+}
+
+nav li{
+    float:right;
+	list-style:none;
+	margin: 0;
+	border: 1px solid #ccc;
+	border-width:0 1px 0 1px;
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav li:first-child{
+	border-width:1px 1px 0 1px;
+	border-radius:9px 9px 0 0;
+}	
+
+nav li:last-child{
+	border-width:0 1px 1px 1px;
+	border-radius:0 0 9px 9px;
+}
+
+nav a{
+    font-size: 1.5em;
+	color: $dark-blue;
+    padding: 8px;
+    text-decoration: none;
+	display:block;
+    width: 348px;
+	text-align:center;
+	border-width: 1px 0 0 1px;
+	border-style:solid;
+	border-color: white #bbb #bbb white;
+	background-color:$light-blue;
+    background-image: -webkit-linear-gradient(top, $med-blue, #666, #666);
+    background-image:    -moz-linear-gradient(top, #d3effd, #b9d2de);
+    background-image:     -ms-linear-gradient(top, #333, #666, #666);
+    background-image:      -o-linear-gradient(top, #333, #666, #666);
+	font-color:black;
+}
+
+nav li:first-child a{
+	border-width:1px 0 0 1px;
+	border-radius:8px 8px 0 0;
+}	
+
+nav li:last-child a{
+	border-width:1px 0 1px 1px;
+	border-radius:0 0 8px 8px;
+}
+
+nav a:visited{color: $dark-blue;}
+nav a:hover{
+	background-color: #333;
+	background-image: -webkit-linear-gradient(top, $med-blue, #666, #666);
+	background-image:    -moz-linear-gradient(top, $light-blue, white, $light-blue, $light-blue);
+	background-image:     -ms-linear-gradient(top, #333, #666, #666);
+	background-image:      -o-linear-gradient(top, #333, #666, #666);
+	color: $dark-blue;
 }
 
 #logo{
@@ -76,9 +162,9 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #000;
+  color: #64C1E6;
   &:visited {
-    color: #666; }
+    color: #66f; }
   &:hover {
     color: #fff;
     background-color: #000; } }
