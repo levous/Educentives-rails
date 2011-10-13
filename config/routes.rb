@@ -1,4 +1,14 @@
 Source::Application.routes.draw do
+  get "home/index"
+
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  
+  resources :users
+  
+  resources :sessions
+
   resources :advocacies
 
   resources :plans
@@ -21,7 +31,11 @@ Source::Application.routes.draw do
 
   resources :goals
   
+
+  
   resources :goal, :has_many => [:milestones]
+  
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

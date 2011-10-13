@@ -55,9 +55,12 @@ h1, h2, h3, h4, h5{
 	border:solid 1px $light-blue;
 	border-radius: 10px;
 	min-height:10px;
+	color: #ccc;
 }
 
-#flash_notice{
+#authentication{float:right;margin:10px;}
+
+.flash_notice{
 	border: 2px solid red;
 	border-radius:8px;
 	text-align: center;
