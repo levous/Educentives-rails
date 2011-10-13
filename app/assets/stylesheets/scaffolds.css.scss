@@ -105,7 +105,7 @@ nav li:last-child{
 nav a{
     font-size: 1.5em;
 	color: $dark-blue;
-    padding: 8px;
+    padding: 14px 8px;
     text-decoration: none;
 	display:block;
     width: 348px;
@@ -114,10 +114,10 @@ nav a{
 	border-style:solid;
 	border-color: white #bbb #bbb white;
 	background-color:$light-blue;
-    background-image: -webkit-linear-gradient(top, $med-blue, #666, #666);
+    background-image: -webkit-linear-gradient(top, #d3effd, #b9d2de);
     background-image:    -moz-linear-gradient(top, #d3effd, #b9d2de);
-    background-image:     -ms-linear-gradient(top, #333, #666, #666);
-    background-image:      -o-linear-gradient(top, #333, #666, #666);
+    background-image:     -ms-linear-gradient(top, #d3effd, #b9d2de);
+    background-image:      -o-linear-gradient(top, #d3effd, #b9d2de);
 	font-color:black;
 }
 
@@ -134,10 +134,10 @@ nav li:last-child a{
 nav a:visited{color: $dark-blue;}
 nav a:hover{
 	background-color: #333;
-	background-image: -webkit-linear-gradient(top, $med-blue, #666, #666);
+	background-image: -webkit-linear-gradient(top, $light-blue, white, $light-blue, $light-blue);
 	background-image:    -moz-linear-gradient(top, $light-blue, white, $light-blue, $light-blue);
-	background-image:     -ms-linear-gradient(top, #333, #666, #666);
-	background-image:      -o-linear-gradient(top, #333, #666, #666);
+	background-image:     -ms-linear-gradient(top, $light-blue, white, $light-blue, $light-blue);
+	background-image:      -o-linear-gradient(top, $light-blue, white, $light-blue, $light-blue);
 	color: $dark-blue;
 }
 
