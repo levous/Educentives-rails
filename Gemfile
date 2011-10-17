@@ -7,6 +7,9 @@ gem 'rails', '3.1.0'
 
 gem 'sqlite3'
 
+# templating
+gem "haml"
+
 # authentication
 gem 'sorcery'
 

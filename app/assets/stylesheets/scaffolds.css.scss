@@ -1,6 +1,9 @@
 $light-blue: #CEF0FF;
 $med-blue: #74839F;
 $dark-blue: #18204C;
+$label-color: #ccc;
+
+// layout and general //-----------------------------------------
 
 body {
   background: url(/assets/background/linen-tile-medium.png) #888;
@@ -31,13 +34,15 @@ h1, h2, h3, h4, h5{
 #content{
   margin:0 auto;
   width:1000px;
-  background: none repeat scroll 0 0 $light-blue;
+  background: none no-repeat scroll bottom right $light-blue;
   border-radius: 10px;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
   position:relative;}
 
 #content-main{
-  background: none repeat scroll 0 0 #FFFFFF;
+  background: url("/assets/background/soccer-goal.png") no-repeat scroll right top #FFFFFF;
+
+  
   border-radius: 10px;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
   display: inline-block;
@@ -55,22 +60,81 @@ h1, h2, h3, h4, h5{
 	border:solid 1px $light-blue;
 	border-radius: 10px;
 	min-height:10px;
-	color: #ccc;
+	color: #bbb;
+	box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
 }
 
-#authentication{float:right;margin:10px;}
+#footer a, #header a{
+    color:$light-blue;
+}
 
-.flash_notice{
-	border: 2px solid red;
-	border-radius:8px;
-	text-align: center;
-	margin: 10px;
-	padding: 5px 20px;
-	color:red;
-	font-size:1.2em;
+
+
+#logo{
+	width: 200px;
+	margin:0 auto;
+	background: url(/assets/educentives.png) no-repeat;
 	display: inline-block;
-	background-color:white;
-	box-shadow: 2px 2px 5px #888;
+	height: 75px;
+	min-height: 75px;
+	position: relative;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 12pt;
+  line-height: 18pt; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 12px; }
+
+a {
+  color: #64C1E6;
+  &:visited {
+    color: #66f; }
+  &:hover {
+    color: #fff;
+    background-color: #000; } }
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px; } }
+
+
+.clearer{clear:both;}
+    
+// navigation //--------------------------------------------
+
+a#home-link{width:200px;height:70px;display:inline-block;}
+a#home-link:hover{background-color:transparent;}
+#home-link span{display:none}
+
+#authentication{
+    background-color: #999;
+    border: 1px solid #bbb;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    float: right;
+    margin: 8px;
+    padding: 2px;
+	
+}
+
+#authentication a{
+	padding:8px;	
+	display:inline-block;
+	text-decoration:none;
+}
+
+#authentication a:first-child{
+	border-right:1px solid $light-blue;
+	border-radius:6px 6px 0 6px;
+}
+#authentication a:last-child{
+	border-left:1px solid $light-blue;
+	border-radius:6px 6px 6px 0;
 }
 
 nav{
@@ -105,23 +169,25 @@ nav li:last-child{
 	border-radius:0 0 9px 9px;
 }
 
-nav a{
-    font-size: 1.5em;
-	color: $dark-blue;
-    padding: 14px 8px;
-    text-decoration: none;
-	display:block;
-    width: 348px;
+nav a, #authentication a{
 	text-align:center;
 	border-width: 1px 0 0 1px;
 	border-style:solid;
 	border-color: white #bbb #bbb white;
-	background-color:$light-blue;
-    background-image: -webkit-linear-gradient(top, #d3effd, #b9d2de);
-    background-image:    -moz-linear-gradient(top, #d3effd, #b9d2de);
-    background-image:     -ms-linear-gradient(top, #d3effd, #b9d2de);
-    background-image:      -o-linear-gradient(top, #d3effd, #b9d2de);
-	font-color:black;
+	color: $dark-blue;
+	background-color:$med-blue;
+	background-image: -webkit-linear-gradient(top, #d3effd, #b9d2de);
+	background-image:    -moz-linear-gradient(top, #d3effd, #b9d2de);
+	background-image:     -ms-linear-gradient(top, #d3effd, #b9d2de);
+	background-image:      -o-linear-gradient(top, #d3effd, #b9d2de);
+}
+nav a{
+    font-size: 1.3em;
+    padding: 14px 8px;
+    text-decoration: none;
+	display:block;
+    width: 348px;
+	
 }
 
 nav li:first-child a{
@@ -144,37 +210,46 @@ nav a:hover{
 	color: $dark-blue;
 }
 
-#logo{
-	width: 200px;
-	margin:0 auto;
-	background: url(/assets/educentives.png) no-repeat;
-	display: inline-block;
-	height: 75px;
-	min-height: 75px;
-	position: relative;
+
+
+// data display //-------------------------------------------
+
+.record-label{
+  width:120px;
+  text-align:right;
+  display:inline-block;
+  color:$label-color;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
+.record-title{
+  font-weight:bold;
+  margin:3px 8px;
+}
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px; }
+a.record-title{
+  color:$med-blue;
+}
 
-a {
-  color: #64C1E6;
-  &:visited {
-    color: #66f; }
-  &:hover {
-    color: #fff;
-    background-color: #000; } }
+.record-value{
+  width:120px;
+  display:inline-block;
+}
+// flash notice //--------------------------------------------
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px; } }
+
+.flash_notice{
+	border: 2px solid red;
+	border-radius:8px;
+	text-align: center;
+	margin: 10px;
+	padding: 5px 20px;
+	color: green;
+	font-size:1.2em;
+	display: inline-block;
+	background-color:white;
+	box-shadow: 2px 2px 5px #888;
+}
+
 
 #notice {
   color: green; }
@@ -195,13 +270,11 @@ div {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
-    font-size: 12px;
+    font-size: 12pt;
     margin: -7px;
     margin-bottom: 0px;
     background-color: #c00;
     color: #fff; }
   ul li {
-    font-size: 12px;
+    font-size: 12pt;
     list-style: square; } }
-
-.clearer{clear:both;}

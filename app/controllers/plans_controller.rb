@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+  before_filter :require_login
   # GET /plans
   # GET /plans.json
   def index

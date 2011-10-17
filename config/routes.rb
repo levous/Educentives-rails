@@ -1,5 +1,5 @@
 Source::Application.routes.draw do
-  get "home/index"
+  match 'about', :to => 'home#about'
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"

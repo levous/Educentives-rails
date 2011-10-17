@@ -12,7 +12,7 @@
 
   <div class="field">
   	<%= label_tag :remember_me %>
-    <%= text_field_tag :remember_me, params[:remember_me] %>
+    <%= check_box_tag :remember_me, params[:remember_me] %>
   </div>
 
   <div class="actions"><%= submit_tag "Log in" %></div>

@@ -1,0 +1,12 @@
+= div_for(goal) do
+  = link_to(goal.title, goal, :class => 'record-title')
+  .row.target
+    %span.record-label point value 
+    %span.record-value=goal.point_value||'n/a'
+    %span.record-label target date
+    %span.record-value=goal.target_datetime||'not set'
+  .row.created-at
+    %span.record-label created 
+    %span.record-value #{distance_of_time_in_words_to_now goal.created_at} ago
+    %span.record-label completed 
+    %span.record-value 0
