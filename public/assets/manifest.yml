@@ -1,8 +1,10 @@
 ---
 background/linen-tile-medium.png: background/linen-tile-medium-eb7c915594a64865a8b28e0a9a1a506a.png
+background/linen-tile-trans.png: background/linen-tile-trans-7602298cc07823069e0ae61ea2fb7f3b.png
+background/soccer-goal.png: background/soccer-goal-8436058268f05c9c8092bd2ef5e2768b.png
 educentives.png: educentives-819465f1b25a8e766628ff5c173e0a8c.png
 rails.png: rails-dd352fc2630e5f9aa5685ef1d7fe5997.png
 jquery-ui.min.js: jquery-ui.min-7ebfa816f30e27f62b7c0a03df6d7607.js
 jquery.min.js: jquery.min-9f88784503ab8f4a76188841e96a8b37.js
-application.js: application-ba374de320779fb0ce045989b28ee930.js
-application.css: application-dae91417d22864b7ba33a6a3db228e28.css
+application.js: application-5dd9f0f9bd1a4cfb2e0477b8c47a8654.js
+application.css: application-accf722c7464f96d9b774c2176416139.css

@@ -1,6 +1,6 @@
 = div_for(goal, :class => 'record') do
-  .row.title
-    = link_to_unless_current(goal.title, goal, :class => 'record-title')
+  .row.title.record-title
+    = link_to_unless_current(goal.title, goal)
   - if current_url = url_for(goal)
     .row.description
       .record-label Description
