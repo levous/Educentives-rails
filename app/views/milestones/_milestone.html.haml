@@ -1,0 +1,12 @@
+= div_for(milestone, :class => 'record') do
+  = link_to(milestone.title, milestone, :class => 'record-title')
+  .row.target
+    %span.record-label point value 
+    %span.record-value=milestone.point_value||'n/a'
+    %span.record-label target date
+    %span.record-value=milestone.target_datetime||'not set'
+  .row.created-at
+    %span.record-label created 
+    %span.record-value #{distance_of_time_in_words_to_now milestone.created_at} ago
+    %span.record-label completed at 
+    %span.record-value=milestone.completed_at||'not complete'

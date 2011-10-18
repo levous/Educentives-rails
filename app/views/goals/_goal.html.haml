@@ -1,12 +1,24 @@
-= div_for(goal) do
-  = link_to(goal.title, goal, :class => 'record-title')
+= div_for(goal, :class => 'record') do
+  .row.title
+    = link_to_unless_current(goal.title, goal, :class => 'record-title')
+  - if current_url = url_for(goal)
+    .row.description
+      .record-label Description
+      = goal.long_description
   .row.target
-    %span.record-label point value 
-    %span.record-value=goal.point_value||'n/a'
-    %span.record-label target date
-    %span.record-value=goal.target_datetime||'not set'
-  .row.created-at
-    %span.record-label created 
+    %span.record-label Point Value 
+    %span.record-value= goal.point_value||'n/a'
+    %span.record-label Target Date
+    %span.record-value= goal.target_datetime||'Not Set'
+  .row.life-span
+    %span.record-label Created 
     %span.record-value #{distance_of_time_in_words_to_now goal.created_at} ago
-    %span.record-label completed 
-    %span.record-value 0
+    %span.record-label Completed 
+    %span.record-value= goal.completed_at ||'Not Complete'
+    
+  .row.plan
+    %span.record-label Plan
+    - if goal.plan
+      %span.record-value= link_to goal.plan.title, goal.plan
+    - else
+      Unplanned

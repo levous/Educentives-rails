@@ -9,7 +9,6 @@ body {
   background: url(/assets/background/linen-tile-medium.png) #888;
   color: #888; 
   font-family: Arial,"Helvetica Neue",sans-serif;
-  line-height: 19px;
   word-wrap: break-word; 
   position:relative; }
 
@@ -18,13 +17,16 @@ H2 {
 }
 
 h1, h2, h3, h4, h5{
-	color:#666;
-    font-family: "minion-pro-1","minion-pro-2",Georgia,"Times New Roman",serif;
-	font-style: normal;
-    font-weight: 500;
-    letter-spacing: -1px;
-    line-height: 1.1em;
-    margin: 30px 0
+  background: url("/assets/background/linen-tile-trans.png") repeat scroll right top #F8F8F8;
+  border-bottom: 1px solid #FFFFFF;
+  border-top: 1px solid #CCCCCC;
+  color: #666666;
+  font-family: "minion-pro-1","minion-pro-2",Georgia,"Times New Roman",serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1.1em;
+  margin: 20px 0 10px 0;
 }
 
 #content-wrapper{
@@ -40,10 +42,9 @@ h1, h2, h3, h4, h5{
   position:relative;}
 
 #content-main{
-  background: url("/assets/background/soccer-goal.png") no-repeat scroll right top #FFFFFF;
-
-  
+  background: url("/assets/background/linen-tile-trans.png") repeat scroll right top #FFFFFF;
   border-radius: 10px;
+  border: 1px solid #FFFFFF;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
   display: inline-block;
   float: left;
@@ -51,7 +52,9 @@ h1, h2, h3, h4, h5{
   min-height: 700px;
   position: relative;
   width: 600px;
-  padding:10px;}
+  padding:10px;
+  margin: -2px 0 -2px 0;
+}
 
 #footer, #header{
 	position:relative;
@@ -68,8 +71,6 @@ h1, h2, h3, h4, h5{
     color:$light-blue;
 }
 
-
-
 #logo{
 	width: 200px;
 	margin:0 auto;
@@ -82,8 +83,21 @@ h1, h2, h3, h4, h5{
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 12pt;
-  line-height: 18pt; }
+  font-size: 11pt;
+  line-height: 14pt; 
+}
+
+fieldset{
+  border-radius: 5px;
+}
+
+fieldset input[type='text'], fieldset textarea{
+  width:99%;
+}
+
+fieldset textarea{
+  height:60px;
+}
 
 pre {
   background-color: #eee;
@@ -181,13 +195,16 @@ nav a, #authentication a{
 	background-image:     -ms-linear-gradient(top, #d3effd, #b9d2de);
 	background-image:      -o-linear-gradient(top, #d3effd, #b9d2de);
 }
+
 nav a{
-    font-size: 1.3em;
-    padding: 14px 8px;
-    text-decoration: none;
-	display:block;
-    width: 348px;
-	
+  font-size:0.9em;
+  padding: 14px 8px;
+  text-decoration: none;
+  display:block;
+  width: 348px;
+	text-transform:uppercase;
+	letter-spacing:0.2em;
+	text-shadow:1px 1px 0 #fff;
 }
 
 nav li:first-child a{
@@ -201,7 +218,7 @@ nav li:last-child a{
 }
 
 nav a:visited{color: $dark-blue;}
-nav a:hover{
+nav a:hover, #authentication a:hover{
 	background-color: #333;
 	background-image: -webkit-linear-gradient(top, $light-blue, white, $light-blue, $light-blue);
 	background-image:    -moz-linear-gradient(top, $light-blue, white, $light-blue, $light-blue);
@@ -213,6 +230,18 @@ nav a:hover{
 
 
 // data display //-------------------------------------------
+
+.record-cntr{
+  background-color: #fff;
+  border:solid 1px #ccc;
+  border-radius:8px;
+  padding:8px;
+}
+
+.record{
+  padding:10px 0;
+  border-bottom:1px solid #f3f3f3;
+}
 
 .record-label{
   width:120px;

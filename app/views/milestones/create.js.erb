@@ -23,8 +23,8 @@
   $(":input:not(input[type=submit])").val("");
 
   /* Append new milestone to milestones list, fade in,then highlight */
-  $("#milestones").append($("<%= escape_javascript( render @milestone ) %>").css("backgroundColor", "yellow").fadeIn(500,function(){
-	$(this).effect("highlight", {color:"red"}, 3000); //<< not working?
+  $("#milestones").append($("<%= escape_javascript( render @milestone ) %>").fadeIn(500,function(){
+	$(this).effect("highlight", {}, 3000); //<< not working?
   }));
 
 

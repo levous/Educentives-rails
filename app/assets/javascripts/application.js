@@ -6,4 +6,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require_tree .
+$(function(){
+	//$('.datetime-field').datetimepicker(datetimepicker({dateFormat: 'mm-dd-yyyy', ampm: true});
+	$('.datetime-field').datepicker();
+});
