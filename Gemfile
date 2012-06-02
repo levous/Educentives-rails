@@ -44,6 +44,18 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+group :test, :development do
+
+    gem 'cucumber'
+    gem 'rspec-rails'
+    gem 'cucumber-rails'
+    gem 'capybara'
+    gem 'database_cleaner'
+    gem 'spork'
+    gem 'launchy'    # So you can do Then show me the page
+ end
+ 
+
 group :production do
   gem 'pg'
 end
