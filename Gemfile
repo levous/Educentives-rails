@@ -2,8 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-gem 'sqlite3'
-
 # templating
 gem "haml"
 
@@ -23,6 +21,7 @@ end
 gem 'jquery-rails'
 
 group :dev, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'debugger'
 end
