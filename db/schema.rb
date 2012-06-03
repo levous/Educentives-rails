@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111013211838) do
+ActiveRecord::Schema.define(:version => 20120602165548) do
 
   create_table "advocacies", :force => true do |t|
     t.string   "relationship"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20111013211838) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "plans", :force => true do |t|
@@ -114,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20111013211838) do
     t.datetime "updated_at"
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
+    t.integer  "person_id"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"

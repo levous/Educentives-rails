@@ -11,8 +11,10 @@
 </p>
 
 <p>
+  <% if @plan.student %>
   <b>Student:</b>
-  <%= @plan.student_id %>
+  <%= @plan.student.person.first_name %> <%= @plan.student.person.last_name %>
+  <% end %>
 </p>
 
 <p>

@@ -3,7 +3,7 @@ class PlansController < ApplicationController
   # GET /plans
   # GET /plans.json
   def index
-    @plans = Plan.all
+    @plans = Plan.find_all_by_student_id current_user.person.student.id
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,7 +42,10 @@ class PlansController < ApplicationController
   # POST /plans.json
   def create
     @plan = Plan.new(params[:plan])
+    # setting to current user as that solves the problem at hand but this will
+    # have to change to passed in user when creating plans for others
 
+    @plan.student = current_user.person.student if current_user.person
     respond_to do |format|
       if @plan.save
         format.html { redirect_to @plan, notice: 'Plan was successfully created.' }

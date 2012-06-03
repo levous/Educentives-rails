@@ -13,6 +13,8 @@ gem "haml"
 # authentication
 gem 'sorcery'
 
+gem 'fabrication', git: 'git://github.com/paulelliott/fabrication.git', branch: 'v2'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -32,29 +34,18 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :development do
-  gem 'rspec-rails'
-end
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
-  gem 'database_cleaner'
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'cucumber-rails'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'spork'
+  gem 'launchy'
 end
-
-group :test, :development do
-
-    gem 'cucumber'
-    gem 'rspec-rails'
-    gem 'cucumber-rails'
-    gem 'capybara'
-    gem 'database_cleaner'
-    gem 'spork'
-    gem 'launchy'    # So you can do Then show me the page
- end
- 
 
 group :production do
   gem 'pg'

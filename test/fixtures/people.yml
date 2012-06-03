@@ -1,8 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
-one:
-  first_name: MyString
-  last_name: MyString
+fred:
+  first_name: Fred
+  last_name: Flintstone
   middle_name: MyString
   title: MyString
 

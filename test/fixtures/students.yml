@@ -1,8 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
-one:
-  title: MyString
+fred:
+  title: Teacher's Pet
   person_id: 1
+  person: fred
 
 two:
   title: MyString
