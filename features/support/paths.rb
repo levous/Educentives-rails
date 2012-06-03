@@ -10,8 +10,8 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /^that company's show page$/
-      company_path(@company)
+    when /^the sign up page$/
+     signup_path 
     when /^the "([^"]*)" company show page$/
       company_path(Company.where(name: $1).first)
     when /^the "([^"]*)" company notifications page$/

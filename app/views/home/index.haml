@@ -1,4 +1,21 @@
 %h1
   Welcome to Educentives
 %p
-  Please sign up
+  - if current_user
+    - if current_user.person.student && !current_user.person.student.plans.empty?
+      = render @goals  
+    - else
+      Nice to see you here.  I can't wait to get started!  Its simple:
+      %ul
+        %li
+          %b
+            = link_to 'Set your Goal', new_goal_path
+          and a target date you'd like to accomplish that by
+
+        %li Find something appropriate to earn as a reward for all that hard work
+        %li Break it up into achievable milestones 
+        %li Commit to your plan and start checking things off!
+  - else
+    Please sign up
+
+

@@ -2,7 +2,9 @@ class GoalsController < ApplicationController
   # GET /goals
   # GET /goals.json
   def index
-    @goals = Goal.all
+
+    @goals = Goal.by_person_as_student(current_user.person)
+    @goals = @goals.by_plan(params[:plan_id]) if params[:plan_id].present?
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +43,18 @@ class GoalsController < ApplicationController
   # POST /goals.json
   def create
     @goal = Goal.new(params[:goal])
+    if params[:plan_id].present?
+      @goal.plan = Plan.find(params[:plan_id])
+    else
+      #default the goal with an empty plan
+      @goal.plan = Plan.new(:title => "My Big Plan")
+      if current_user.person.student
+        @goal.plan.student = current_user.person.student
+      else
+        @goal.plan.student = Student.new(:person => current_user.person)
+      end
+    end
+
 
     respond_to do |format|
       if @goal.save

@@ -1,0 +1,6 @@
+%h1
+  Welcome to Educentives
+%p
+  - if current_user.person.student && !current_user.person.student.plans.empty
+
+  Please sign up

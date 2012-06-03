@@ -1,5 +1,8 @@
 <h1>Listing plans</h1>
 
+<% if @plans == nil %>
+  <%vi  ender "getting_started" %>
+<% else %>  
 <table>
   <tr>
     <th>Targetdate</th>
@@ -11,8 +14,7 @@
     <th></th>
     <th></th>
   </tr>
-
-<% @plans.each do |plan| %>
+  <% @plans.each do |plan| %>
   <tr>
     <td><%= plan.targetDate %></td>
     <td><%= plan.title %></td>
@@ -23,9 +25,10 @@
     <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
     <td><%= link_to 'Destroy', plan, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
-<% end %>
+  <% end %>
 </table>
 
+<% end %>
 <br />
 
 <%= link_to 'New Plan', new_plan_path %>

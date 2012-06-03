@@ -11,8 +11,9 @@ Source::Application.routes.draw do
 
   resources :advocacies
 
-  resources :plans
-
+  resources :plans do
+    resources :goals
+  end
   resources :sponsorships
 
   resources :teachers

@@ -1,4 +1,3 @@
-@javascript
 Feature: User adds a plan
 
   Scenario: User creates a new plan
@@ -16,4 +15,3 @@ Feature: User adds a plan
       And I should see "Fred Flintstone"
     When I am on the plans page
       Then I should see "sugar pants"
-      And show me the page
