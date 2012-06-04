@@ -7,7 +7,7 @@ class Goal < ActiveRecord::Base
   scope :by_person_as_student,
     lambda { |person| 
     { 
-      :joins      => "JOIN plans p ON p.id = plan_id, students s ON s.id = p.student_id, people pp ON pp.id = s.person_id", 
+      :joins      => "JOIN plans p ON p.id = plan_id JOIN students s ON s.id = p.student_id, people pp ON pp.id = s.person_id", 
       :conditions => "pp.id = #{person.id}"  
     } 
   } 
