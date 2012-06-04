@@ -2,7 +2,7 @@
   Welcome to Educentives
 %p
   - if current_user
-    - if current_user.person.student && !current_user.person.student.plans.empty?
+    - if current_user.person && current_user.person.student && !current_user.person.student.plans.empty?
       = render @goals  
     - else
       Nice to see you here.  I can't wait to get started!  Its simple:
