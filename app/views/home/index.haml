@@ -3,7 +3,8 @@
 %p
   - if current_user
     - if current_user.try(:person).try(:student).try(:plans).present?
-      = render @goals  
+      .record-cntr
+        = render @goals  
     - else
       Nice to see you here.  I can't wait to get started!  Its simple:
       %ul
