@@ -48,6 +48,7 @@ class GoalsController < ApplicationController
     else
       #default the goal with an empty plan
       @goal.plan = Plan.new(:title => "My Big Plan")
+      #user must have person or its an invalid user.  Not asserting that here
       if current_user.person.student
         @goal.plan.student = current_user.person.student
       else
