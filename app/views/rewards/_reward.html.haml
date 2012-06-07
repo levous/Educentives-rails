@@ -1,0 +1,7 @@
+= div_for(reward, :class => 'record') do
+  .row.title.record-title
+    = link_to_unless_current(reward.title, reward)
+  .row
+    %span.record-label Point Value
+    %span.record-value= reward.point_value||'n/a'
+  
