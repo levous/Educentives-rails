@@ -7,8 +7,11 @@ gem "haml"
 
 # authentication
 gem 'sorcery'
+# mocking
+gem 'fabrication'
 
-gem 'fabrication', git: 'git://github.com/paulelliott/fabrication.git', branch: 'v2'
+# uploader
+gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,19 +26,20 @@ gem 'jquery-rails'
 group :dev, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
   gem 'debugger'
+  gem 'pry'
+  gem 'launchy'
 end
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
   gem 'factory_girl_rails'
-  gem 'cucumber-rails'
   gem 'capybara'
   gem 'guard-rspec'
-  gem 'database_cleaner'
   gem 'spork'
-  gem 'launchy'
 end
 
 group :production do

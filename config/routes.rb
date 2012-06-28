@@ -30,6 +30,8 @@ Source::Application.routes.draw do
 
   resources :milestones
 
+  match 'milestones/:id/complete', :to => 'milestones#complete'
+
   resources :goals
   
 

@@ -12,6 +12,10 @@ module NavigationHelpers
       '/'
     when /^the sign up page$/
      signup_path 
+
+    when /^the goal overview page$/
+      goal_path(Goal.first) 
+
     when /^the "([^"]*)" company show page$/
       company_path(Company.where(name: $1).first)
     when /^the "([^"]*)" company notifications page$/

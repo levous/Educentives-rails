@@ -72,6 +72,16 @@ class MilestonesController < ApplicationController
     end
   end
 
+  def complete
+    @milestone = Milestone.find(params[:id])
+    @milestone.completed_at = DateTime.now
+    @milestone.save
+    respond_to do |format|
+      format.html { redirect_to @milestone, notice: 'Milestone completed.' }
+      format.json { head :ok }
+    end
+  end
+  
   # DELETE /milestones/1
   # DELETE /milestones/1.json
   def destroy

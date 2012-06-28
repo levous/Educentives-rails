@@ -1,4 +1,4 @@
-<%= form_for(@reward_photo) do |f| %>
+<%= form_for(@reward_photo, :html => {:multipart => true}) do |f| %>
   <% if @reward_photo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@reward_photo.errors.count, "error") %> prohibited this reward_photo from being saved:</h2>
@@ -16,8 +16,8 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :url_path %><br />
-    <%= f.number_field :url_path %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :reward_id %><br />

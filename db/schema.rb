@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602165548) do
+ActiveRecord::Schema.define(:version => 20120628023351) do
 
   create_table "advocacies", :force => true do |t|
     t.string   "relationship"
@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(:version => 20120602165548) do
 
   create_table "reward_photos", :force => true do |t|
     t.string   "title"
-    t.integer  "url_path"
     t.integer  "reward_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "rewards", :force => true do |t|

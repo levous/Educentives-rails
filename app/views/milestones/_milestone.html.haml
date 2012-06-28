@@ -9,4 +9,8 @@
     %span.record-label created 
     %span.record-value #{distance_of_time_in_words_to_now milestone.created_at} ago
     %span.record-label completed at 
-    %span.record-value=milestone.completed_at||'not complete'
+    %span.record-value
+      - if milestone.completed_at
+        = milestone.completed_at
+      - else
+        = button_to "Finish", { :controller => :milestones, :action => "complete", :id => milestone.id }, :confirm => "Are you sure?"
