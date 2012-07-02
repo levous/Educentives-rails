@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user.person = @person
     if(@user.save)
       user = login(@user.username, params[:user][:password], rememberme = false)
-      redirect_to root_url, :notice => "Signed Up! (please log in)"
+      redirect_to root_url, :notice => "Signed Up!" 
     else
       render :new
     end
