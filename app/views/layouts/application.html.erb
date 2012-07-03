@@ -19,6 +19,7 @@
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet" type= "text/css"></link>
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tags %>
 
@@ -28,6 +29,9 @@
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <%= javascript_include_tag 'modernizr' %>
+
+  <!-- moved js to top so jquery will work.  need to research whether this can be moved to the bottom-->
+  <%= javascript_include_tag 'application' %>
 
   <!-- Initializes the modernizr and actually perform the checks. Enable this
        if you need the modernizr, but remember to only do the actual checks
@@ -91,7 +95,6 @@
 
 </body>
   <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
-  <%= javascript_include_tag 'application' %>
 
   <% if Rails.env.production? %>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
