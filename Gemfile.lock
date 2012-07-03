@@ -143,6 +143,7 @@ GEM
       activesupport (= 3.1.0)
       bundler (~> 1.0)
       railties (= 3.1.0)
+    rails-boilerplate (0.1.9)
     railties (3.1.0)
       actionpack (= 3.1.0)
       activesupport (= 3.1.0)
@@ -228,6 +229,7 @@ DEPENDENCIES
   pg
   pry
   rails (= 3.1.0)
+  rails-boilerplate
   rspec-rails
   sass-rails (~> 3.1.0)
   sorcery

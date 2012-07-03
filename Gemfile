@@ -4,6 +4,7 @@ gem 'rails', '3.1.0'
 
 # templating
 gem "haml"
+gem "rails-boilerplate"
 
 # authentication
 gem 'sorcery'
