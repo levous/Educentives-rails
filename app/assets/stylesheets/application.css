@@ -7,3 +7,25 @@
  *= require_tree . 
 */
 
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+-webkit-appearance: push-button;
+}
+.float-right, .float-left{
+  margin:10px;
+}
+.float-right{
+  float:right;
+}
+.float-left{
+  float:left;
+}
+.photo{
+  background: #fff;
+  border: solid 1px #888;
+  padding:8px 8px 30px 8px;
+  -moz-box-shadow: 5px 5px 5px #888;
+  -webkit-box-shadow:5px 5px 5px #888;
+  box-shadow: 5px 5px 5px #888;
+
+}
+
