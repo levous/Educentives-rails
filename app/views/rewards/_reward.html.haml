@@ -4,4 +4,6 @@
   .row
     %span.record-label Point Value
     %span.record-value= reward.point_value||'n/a'
+  .row
+    = image_tag reward.reward_photo.image if reward.reward_photo
   

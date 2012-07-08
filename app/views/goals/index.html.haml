@@ -1,0 +1,24 @@
+%h1 Listing goals
+- @goals.each do |goal|
+  %h2
+    = goal.title
+  %p
+    = goal.long_description 
+  %table.meta-data
+    %tr
+      %th points
+      %th due
+      %th completed
+    %tr
+      %td 
+        = goal.point_value 
+      %td
+        = goal.target_datetime 
+      %td
+        = goal.completed_at 
+  %p 
+    = goal.plan_id 
+    = link_to 'Show', goal 
+    = link_to 'Edit', edit_goal_path(goal) 
+    = link_to 'Destroy', goal, confirm: 'Are you sure?', method: :delete 
+= link_to 'New Goal', new_goal_path 
