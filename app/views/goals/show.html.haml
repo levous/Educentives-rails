@@ -6,9 +6,8 @@
   %em The Journey 
   = render @goal
 
-%h3 The Prize
-
 .record-cntr
+  %em The Prize
   - if @goal.plan.reward
     = render @goal.plan.reward 
   - else
