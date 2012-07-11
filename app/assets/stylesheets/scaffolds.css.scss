@@ -2,6 +2,7 @@ $light-blue: #CEF0FF;
 $med-blue: #74839F;
 $dark-blue: #18204C;
 $label-color: #ccc;
+$right-pane-bg-img: image-url('background/forest-trail-transparent.png');
 
 // layout and general //-----------------------------------------
 
@@ -36,7 +37,7 @@ h1, h2, h3, h4, h5{
 #content{
   margin:0 auto;
   width:1000px;
-  background: none no-repeat scroll bottom right $light-blue;
+  background: $right-pane-bg-img no-repeat scroll bottom right $light-blue;
   border-radius: 10px;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
   position:relative;}
@@ -236,6 +237,7 @@ nav a:hover, #authentication a:hover{
   border:solid 1px #ccc;
   border-radius:8px;
   padding:8px;
+  margin:5px 0;
 }
 
 .record{
@@ -260,7 +262,6 @@ a.record-title{
 }
 
 .record-value{
-  width:120px;
   display:inline-block;
 }
 // flash notice //--------------------------------------------
@@ -312,7 +313,7 @@ table.meta-data{
   td, th{
     padding:5px;
     margin:1px;
-    background-color:#ffffff;
+    background-color:#eeeeee;
   }
   td{
     border-top: solid 1px $med-blue;
