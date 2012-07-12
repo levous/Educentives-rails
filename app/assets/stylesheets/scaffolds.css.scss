@@ -57,6 +57,10 @@ h1, h2, h3, h4, h5{
   margin: -2px 0 -2px 0;
 }
 
+#content-header{
+   background: url("/assets/background/wide-gloss.png") no-repeat scroll center top;
+}
+
 #footer, #header{
 	position:relative;
 	width: 1000px;
@@ -92,7 +96,7 @@ fieldset{
   border-radius: 5px;
 }
 
-fieldset input[type='text'], fieldset input[type='password'], fieldset textarea{
+fieldset input[type='text'],  fieldset input[type='number'], fieldset input[type='password'], fieldset textarea{
   width:99%;
 }
 
@@ -347,4 +351,8 @@ table.meta-data{
 
 }
 
+.mnemonic-list li:first-letter{
+  font-size:120%;
+  color:$dark-blue;
 
+}

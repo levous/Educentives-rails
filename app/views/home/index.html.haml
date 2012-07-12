@@ -4,7 +4,7 @@
   - if current_user
     - if current_user.try(:person).try(:student).try(:plans).present?
       .record-cntr
-        = render @goals  
+        = render @goals
     - else
       Nice to see you here.  I can't wait to get started!  Its simple:
       = link_to image_tag('lambo.png', :style => 'opacity:0.3;position:absolute;right:40px;top:160px;'), new_goal_path
@@ -12,8 +12,7 @@
         %li
           %b
             = link_to 'Set your Goal', new_goal_path
-          and a target date you'd like to accomplish that by
-
+          %small (we'll set a date later)
         %li Find something appropriate to earn as a reward for all that hard work
         %li Break it up into achievable milestones 
         %li Commit to your plan and start checking things off!

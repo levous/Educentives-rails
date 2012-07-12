@@ -1,12 +1,13 @@
 Source::Application.routes.draw do
-  match 'about', :to => 'home#about'
+  match 'about/(:page_name)' => 'content#about', :as => :about
+
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
-  
+
   resources :users
-  
+
   resources :sessions
 
   resources :advocacies
