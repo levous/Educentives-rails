@@ -24,7 +24,7 @@ end
 
 gem 'jquery-rails'
 
-group :dev, :test do
+group :devevelopment, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'cucumber-rails'
