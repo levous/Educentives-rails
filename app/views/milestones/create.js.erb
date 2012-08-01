@@ -20,7 +20,7 @@
   $("#flash_notice").show(300);
 
   /*Clear the entire form*/
-  $(":input:not(input[type=submit])").val("");
+  $(":input:not(input[type=submit],input[type=hidden])").val("");
 
   /* Append new milestone to milestones list, fade in,then highlight */
   $("#milestones").append($("<%= escape_javascript( render @milestone ) %>").fadeIn(500,function(){

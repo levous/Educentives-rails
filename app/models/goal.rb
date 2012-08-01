@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-  has_many :milestones
+  has_many :milestones, :dependent => :delete_all
   belongs_to :plan
   validates_presence_of :title
  
