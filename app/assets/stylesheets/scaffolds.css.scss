@@ -97,7 +97,7 @@ fieldset{
   border-radius: 5px;
 }
 
-fieldset input[type='text'], fieldset input[type='number'], fieldset textarea, .wideform textarea, .wideform input[type='text'], input[type='number']{
+fieldset input[type='text'], fieldset input[type='number'], fieldset input[type='password'], fieldset textarea, .wideform textarea, .wideform input[type='text'], input[type='number']{
   width:99%;
   border: solid 1px $med-blue;
   border-radius: 4px;
