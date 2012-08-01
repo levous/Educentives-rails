@@ -24,13 +24,20 @@ class GoalsController < ApplicationController
   end
 
   # GET /goals/new
+  # GET /goals/wizard
   # GET /goals/new.json
   def new
     @goal = Goal.new
+    current_uri = request.env['PATH_INFO']
+    
+    if current_uri == "/goals/wizard"
+      render :wizard
+    else
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @goal }
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @goal }
+      end
     end
   end
 

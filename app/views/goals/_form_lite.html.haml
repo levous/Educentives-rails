@@ -1,0 +1,31 @@
+= form_for(@goal) do |f|
+  = if @goal.errors.any?
+    #error_explanation
+      %h2 #{pluralize(@goal.errors.count, "error")} prohibited this goal from being saved:
+      #ul
+        = @goal.errors.full_messages.each do |msg|
+          %li
+            = msg
+  %script
+    \$(function(){
+    \  $('a#submit_form').click(function(){
+    \      $('form').submit();
+    \      return false;
+    \  });
+    \});
+    
+  .wideform
+    .field
+      = f.label :title
+      = f.text_field :title 
+    .field
+      = f.label :long_description, "Description"
+      = f.text_area :long_description
+    .actions
+      %a#submit_form.edu-button.arrow-left{ :rel => "nofollow",
+                                :href => new_goal_path} 
+        %span.icon-32.arrow-white-32 
+        Create Your Goal
+      
+    .clearer
+   

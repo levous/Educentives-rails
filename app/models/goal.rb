@@ -1,6 +1,7 @@
 class Goal < ActiveRecord::Base
   has_many :milestones
   belongs_to :plan
+  validates_presence_of :title
  
   scope :by_plan,
     lambda { |plan_id| where(plan_id: plan_id)}

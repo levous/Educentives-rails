@@ -4,6 +4,20 @@
 <h3>My Goals</h3>
 <div id="goal-list-cntr">
 	<div>
+	  <% if !@goals.empty? %>
 		<%= render @goals %>
+		<% else %>
+		Ready to set some goals?
+		
+		<a class="edu-button arrow-left" rel="nofollow" href="<%= goal_wizard_path %>">
+      <span class="icon-32 arrow-white-32"></span>
+      Set Your First Goal
+    </a>
+    
+		<p>Simply think of something you'd like to accomplish.  It can be a lofty goal or a target easily within reach.  Just set your sites on it. </p>
+		
+    <p>Once you've decided, tap the button to the right!</p>
+    <div class="clearer"></div>
+		<% end %>
 	</div>
 </div>
