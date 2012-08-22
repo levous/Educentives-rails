@@ -9,7 +9,7 @@
         %td 
           = goal.point_value 
         %td
-          = goal.target_datetime 
+          = distance_of_time_in_words_to_now goal.target_datetime if goal.target_datetime  
         %td
           = goal.completed_at ||'Not Complete'
 
@@ -29,4 +29,11 @@
       %span.record-value= link_to goal.plan.title, goal.plan
     - else
       Unplanned
+
+  - if url_for() != url_for(goal) && !goal.milestones.empty?
+    .row.description
+      .record-label Next Milestone
+      .indent
+        = render goal.milestones[0]
+
   .clearer

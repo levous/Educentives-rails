@@ -4,7 +4,11 @@
     %span.record-label point value 
     %span.record-value=milestone.point_value||'n/a'
     %span.record-label target date
-    %span.record-value=milestone.target_datetime||'not set'
+    %span.record-value
+      - if milestone.target_datetime
+        = distance_of_time_in_words_to_now milestone.target_datetime
+      - else
+        not set
   .row.created-at
     %span.record-label created 
     %span.record-value #{distance_of_time_in_words_to_now milestone.created_at} ago
@@ -13,4 +17,4 @@
       - if milestone.completed_at
         = milestone.completed_at
       - else
-        = button_to "Finish", { :controller => :milestones, :action => "complete", :id => milestone.id }, :confirm => "Are you sure?"
+        = button_to "Finish", { :controller => :milestones, :action => "complete", :id => milestone.id, :remote => true }
