@@ -21,6 +21,8 @@
     .field
       = f.label :long_description, "Description"
       = f.text_area :long_description
+      = hidden_field_tag :user_context, user_context
+
     .actions
       %a#submit_form.edu-button.arrow-left{ :rel => "nofollow",
                                 :href => new_goal_path} 

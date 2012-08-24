@@ -34,6 +34,9 @@ group :development, :test do
   gem 'debugger'
   gem 'pry'
   gem 'launchy'
+  gem 'ZenTest'
+  gem 'autotest'
+  gem 'autotest-rails'
 end
 
 group :test do

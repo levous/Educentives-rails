@@ -30,7 +30,7 @@ class GoalsController < ApplicationController
     @goal = Goal.new
     current_uri = request.env['PATH_INFO']
     
-    if current_uri == "/goals/wizard"
+    if current_uri == goal_wizard_path
       render :wizard
     else
 
@@ -50,23 +50,20 @@ class GoalsController < ApplicationController
   # POST /goals.json
   def create
     @goal = Goal.new(params[:goal])
-    if params[:plan_id].present?
-      @goal.plan = Plan.find(params[:plan_id])
-    else
-      #default the goal with an empty plan
-      @goal.plan = Plan.new(:title => "My Big Plan")
-      #user must have person or its an invalid user.  Not asserting that here
-      if current_user.person.student
-        @goal.plan.student = current_user.person.student
-      else
-        @goal.plan.student = Student.new(:person => current_user.person)
-      end
-    end
+    @goal.set_goal_user current_user
 
+    # on the wizard path, steps guarantee that this goal preceeds the plan and reward.  Create empty objects for next step.
+    is_wizard = (params[:user_context] == 'wizard')
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+        if is_wizard 
+          @reward = @goal.plan.reward
+          puts "reward #{@reward}"
+          format.html { render action: "wizard_prize" }
+        else
+          format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+        end
         format.json { render json: @goal, status: :created, location: @goal }
       else
         format.html { render action: "new" }

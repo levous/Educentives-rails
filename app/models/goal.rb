@@ -2,6 +2,14 @@ class Goal < ActiveRecord::Base
   has_many :milestones, :dependent => :delete_all
   belongs_to :plan
   validates_presence_of :title
+
+  before_save :ensure_plan
+  
+  def ensure_plan
+    #default the goal with an empty plan
+    self.plan = Plan.new(:title => self.title) if self.plan.nil?
+  end
+
  
   scope :by_plan,
     lambda { |plan_id| where(plan_id: plan_id)}
@@ -12,4 +20,17 @@ class Goal < ActiveRecord::Base
       :conditions => "pp.id = #{person.id}"  
     } 
   } 
+
+  def set_goal_user(goal_user)
+
+    self.ensure_plan
+    #user must have person or its an invalid user.  Not asserting that here
+    if goal_user.person.student
+      self.plan.student = goal_user.person.student
+    else
+      self.plan.student = Student.new(:person => goal_user.person)
+    end
+
+  end
 end
+

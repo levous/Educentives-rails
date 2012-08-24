@@ -3,4 +3,4 @@
 So... what is is that you want to do?
 
 .record-cntr
-  = render 'form_lite'
+  = render :partial => 'form_lite', :locals => {:user_context => 'wizard'}
