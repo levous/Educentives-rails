@@ -76,9 +76,12 @@ class MilestonesController < ApplicationController
     @milestone = Milestone.find(params[:id])
     @milestone.completed_at = DateTime.now
     @milestone.save
+
+    flash[:notice] = "Successfully completed milestone."
     respond_to do |format|
       format.html { redirect_to @milestone, notice: 'Milestone completed.' }
       format.json { head :ok }
+      format.js
     end
   end
   
