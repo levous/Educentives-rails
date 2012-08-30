@@ -17,4 +17,4 @@
       - if milestone.completed_at
         = milestone.completed_at
       - else
-        = button_to "Finish", { :controller => :milestones, :action => "complete", :id => milestone.id, :remote => true }
+        = button_to "Finish", { :controller => :milestones, :action => "complete", :id => milestone.id }, :remote => true 
