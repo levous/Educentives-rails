@@ -1,4 +1,4 @@
-= div_for(milestone, :class => 'record') do
+= div_for(milestone, :class => (milestone.completed_at ? 'record completed' : 'record')) do
   = link_to(milestone.title, milestone, :class => 'record-title')
   .row.target
     %span.record-label point value 

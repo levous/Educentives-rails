@@ -19,6 +19,8 @@
     .field
       = f.label :plan
       = f.hidden_field :plan_id
+      = hidden_field_tag :user_context, user_context
+
       = link_to @reward.plan.title, @reward.plan
     .actions
       = f.submit

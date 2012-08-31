@@ -40,6 +40,7 @@ class RewardsController < ApplicationController
   # POST /rewards
   # POST /rewards.json
   def create
+
     @reward = Reward.new(params[:reward])
 
     respond_to do |format|
@@ -57,11 +58,16 @@ class RewardsController < ApplicationController
   # PUT /rewards/1.json
   def update
     @reward = Reward.find(params[:id])
+    is_wizard = (params[:user_context] == 'wizard')
 
     respond_to do |format|
       if @reward.update_attributes(params[:reward])
-        format.html { redirect_to @reward, notice: 'Reward was successfully updated.' }
-        format.json { head :ok }
+        if is_wizard
+          format.html { redirect_to @reward.plan.goal, notice: 'Congratulations, you\'ve set up a Goal. Start adding Milestones'}
+        else
+          format.html { redirect_to @reward, notice: 'Reward was successfully updated.' }
+          format.json { head :ok }
+        end
       else
         format.html { render action: "edit" }
         format.json { render json: @reward.errors, status: :unprocessable_entity }
