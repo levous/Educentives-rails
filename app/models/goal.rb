@@ -32,5 +32,9 @@ class Goal < ActiveRecord::Base
     end
 
   end
+
+  def nextMilestone
+    milestones.find(:first, :conditions =>"completed_at IS NULL", :order => "created_at ASC")
+  end
 end
 

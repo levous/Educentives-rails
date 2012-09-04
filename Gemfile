@@ -10,6 +10,8 @@ gem "rails-boilerplate"
 gem 'sorcery'
 # mocking
 gem 'fabrication'
+# validation messages
+gem "dynamic_form"
 
 # uploader
 gem 'carrierwave'

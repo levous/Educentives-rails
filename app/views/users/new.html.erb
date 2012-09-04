@@ -1,27 +1,29 @@
 <h1>Sign Up</h1>
-<%= form_for @user do |f| %>
-  <fieldset>
-    <div class="field">
-      <%= f.label :username %>
-      <%= f.text_field :username %>
-    </div>
+<div class="record-cntr">
+  <%= form_for @user do |f| %>
+    <fieldset>
+      <div><%= f.error_messages %></div>
+      <div class="field">
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+      </div>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-    </div>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-    </div>
+      <div class="field">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
 
-    <div class="actions"><%= f.submit %></div>
-  </fieldset>
-	
-<% end %>
+      <div class="actions"><%= f.submit %></div>
+    </fieldset>
+  <% end %>
+</div>

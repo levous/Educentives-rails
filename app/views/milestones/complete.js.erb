@@ -4,5 +4,7 @@ $("#flash_notice").html("<%= escape_javascript(flash[:notice])%>");
 /*Show the flash_notice div*/
 $("#flash_notice").show(300);
 
-/* Update completed milestone in milestones list, change bg,then highlight */
+/* Update completed milestone in milestones list, change bg, then highlight */
 $("#milestone_<%= @milestone.id %>").addClass('completed').effect("highlight", {}, 3000);
+/* remove finish button */
+$("#milestone_<%= @milestone.id %>").find("input[type='submit']").hide().parent().append('complete');

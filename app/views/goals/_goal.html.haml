@@ -34,6 +34,9 @@
     .row.description
       .record-label Next Milestone
       .indent
-        = render goal.milestones[0]
+        - if goal.nextMilestone.nil?
+          no incomplete milstones!
+        - else
+          = render goal.nextMilestone unless goal.nextMilestone.nil?
 
   .clearer

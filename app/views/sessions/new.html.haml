@@ -1,20 +1,22 @@
 %h1 Log in
 :javascript
   $(function(){$("#username").focus()})
-= form_tag sessions_path do
-  %fieldset
-    .field
-      = label_tag :username
-      = text_field_tag :username, params[:username]
-    .field
-      = label_tag :password
-      = password_field_tag :password, params[:password]
-    .field
-      = label_tag :remember_me
-      = check_box_tag :remember_me, params[:remember_me]
-      .actions= submit_tag "Log in"
-    .field
-      %small
-        need to 
-        = link_to "register", signup_path
-        ?
+.record-cntr
+
+  = form_tag sessions_path do
+    %fieldset
+      .field
+        = label_tag :username
+        = text_field_tag :username, params[:username]
+      .field
+        = label_tag :password
+        = password_field_tag :password, params[:password]
+      .field
+        = label_tag :remember_me
+        = check_box_tag :remember_me, params[:remember_me]
+        .actions= submit_tag "Log in"
+      .field
+        %small
+          need to 
+          = link_to "register", signup_path
+          ?

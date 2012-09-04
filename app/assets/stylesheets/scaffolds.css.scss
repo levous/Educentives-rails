@@ -365,6 +365,7 @@ a.record-title{
 #notice {
   color: green; }
 
+
 .field_with_errors {
   padding: 2px;
   background-color: red;
@@ -378,6 +379,12 @@ a.record-title{
 }
   
 .field div:last-child .field_with_errors{ border-radius:0 0 5px 5px;}
+
+
+.errorExplanation h2{
+  font-size:1.2em;
+  color:red;
+}
 
 #error_explanation {
   width: 450px;
@@ -442,6 +449,7 @@ table.meta-data{
   }
 
 }
+
 
 .mnemonic-list li:first-letter{
   font-size:120%;
