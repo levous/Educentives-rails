@@ -1,13 +1,6 @@
 %fieldset
   = form_for(@reward) do |f|
-    - if @reward.errors.any?
-      #error_explanation
-        %h2
-          = pluralize(@reward.errors.count, "error")
-          prohibited this reward from being saved:
-        %ul
-          - @reward.errors.full_messages.each do |msg|
-            %li= msg
+    = f.error_messages
     .field
       = f.label :title
       %br/
@@ -19,8 +12,19 @@
     .field
       = f.label :plan
       = f.hidden_field :plan_id
-      = hidden_field_tag :user_context, user_context
-
+      - if defined? user_context
+        = hidden_field_tag :user_context, user_context 
       = link_to @reward.plan.title, @reward.plan
+    %h3 Photo
+
+    = f.fields_for :reward_photo do |builder|
+      .field
+        = builder.label :title
+        = builder.text_field :title
+      .field
+        = image_tag builder.object.image if builder.object.present?
+        %br
+        = builder.label :replace_image
+        = builder.file_field :image 
     .actions
       = f.submit

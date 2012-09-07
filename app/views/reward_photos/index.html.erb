@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Url path</th>
+    <th>Image</th>
     <th>Reward</th>
     <th></th>
     <th></th>
@@ -13,7 +13,7 @@
 <% @reward_photos.each do |reward_photo| %>
   <tr>
     <td><%= reward_photo.title %></td>
-    <td><%= reward_photo.url_path %></td>
+    <td><%= reward_photo.image %></td>
     <td><%= reward_photo.reward_id %></td>
     <td><%= link_to 'Show', reward_photo %></td>
     <td><%= link_to 'Edit', edit_reward_photo_path(reward_photo) %></td>

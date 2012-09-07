@@ -35,6 +35,8 @@ class RewardsController < ApplicationController
   # GET /rewards/1/edit
   def edit
     @reward = Reward.find(params[:id])
+    #@reward.reward_photo = RewardPhoto.new unless @reward.reward_photo.present?
+
   end
 
   # POST /rewards
