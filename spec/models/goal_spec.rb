@@ -40,12 +40,15 @@ describe Goal do
 
     goal.points_complete.should == 100
 
+    goal.percent_complete.should == 50
+
     m2.completed_at = DateTime.now
     m2.save
 
     goal.save
 
     goal.points_complete.should == 200
+    goal.percent_complete.should == 100
 
   end
 

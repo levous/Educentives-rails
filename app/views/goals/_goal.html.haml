@@ -11,7 +11,7 @@
         %td
           = distance_of_time_in_words_to_now goal.target_datetime if goal.target_datetime  
         %td
-          = goal.completed_at ||'Not Complete'
+          = goal.completed_at || "#{goal.percent_complete}%"
 
   .row.title.record-title
     = link_to_unless_current(goal.title, goal)
