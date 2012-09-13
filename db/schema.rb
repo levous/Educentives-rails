@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628023351) do
+ActiveRecord::Schema.define(:version => 20120913162257) do
 
   create_table "advocacies", :force => true do |t|
     t.string   "relationship"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120628023351) do
     t.datetime "completed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "points_complete"
   end
 
   create_table "milestones", :force => true do |t|

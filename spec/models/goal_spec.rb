@@ -18,4 +18,35 @@ describe Goal do
     goal.set_goal_user User.new(:person => Person.new)
     goal.plan.student.should be_an_instance_of(Student)
   end
+  
+  it "should calculate percent complete upon save" do
+    goal = Goal.new(:title => 'whateva')
+    goal.point_value = 200
+    m1 = Milestone.new
+    m1.point_value = 100
+    m2 = Milestone.new
+    m2.point_value = 100
+
+    goal.milestones << [m1,m2]
+    goal.save
+
+    goal.points_complete = 0
+    goal.points_complete.should == 0
+
+    m1.completed_at = DateTime.now
+    m1.save
+
+    goal.save
+
+    goal.points_complete.should == 100
+
+    m2.completed_at = DateTime.now
+    m2.save
+
+    goal.save
+
+    goal.points_complete.should == 200
+
+  end
+
 end

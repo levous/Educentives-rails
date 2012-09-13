@@ -3,13 +3,19 @@ class Goal < ActiveRecord::Base
   belongs_to :plan
   validates_presence_of :title
 
-  before_save :ensure_plan
+  before_save :ensure_plan, :calculate_points_complete!
   
   def ensure_plan
     #default the goal with an empty plan
     self.plan = Plan.new(:title => self.title) if self.plan.nil?
   end
+  
+  def calculate_points_complete!
+    self.points_complete = self.milestones.sum(:point_value, :conditions => ['completed_at IS NOT NULL']) || 0
 
+    puts self.inspect
+    puts self.milestones.sum(:point_value)
+  end
  
   scope :by_plan,
     lambda { |plan_id| where(plan_id: plan_id)}
