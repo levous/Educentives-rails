@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Title:
+  = @reward_photo.title
+%p
+  %b Image
+  = reward_photo_linked_image_tag @reward_photo 
+  %p
+  %b Reward:
+  = @reward_photo.reward_id
+= link_to 'Edit', edit_reward_photo_path(@reward_photo)
+|
+\#{link_to 'Back', reward_photos_path}
