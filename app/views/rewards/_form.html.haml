@@ -22,7 +22,7 @@
         = builder.label :title
         = builder.text_field :title
       .field
-        = image_tag builder.object.image if builder.object.present?
+        = image_tag builder.object.image if builder.object.image.present?
         %br
         = builder.label :replace_image
         = builder.file_field :image 

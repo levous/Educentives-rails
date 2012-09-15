@@ -20,7 +20,7 @@
       .record-label Description
       = goal.long_description
   .row
-    = image_tag goal.plan.reward.reward_photo.image_url(:thumb_small) if goal.plan.reward.reward_photo.image? 
+    = image_tag goal.plan.reward.reward_photo.image_url(:thumb_small) if goal.plan.reward.reward_photo && goal.plan.reward.reward_photo.image? 
   .row.life-span
     %span.record-label Created 
     %span.record-value #{distance_of_time_in_words_to_now goal.created_at} ago

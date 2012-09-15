@@ -1,7 +1,7 @@
 class Plan < ActiveRecord::Base
   belongs_to :student
-  has_one :goal
-  has_one :reward
+  has_one :goal, :dependent => :delete
+  has_one :reward, :dependent => :delete
   after_initialize :default_values
 
   private
