@@ -52,4 +52,26 @@ describe Goal do
 
   end
 
+  it "should calculate 0% when no points are assigned" do
+    goal = Goal.new(:title => 'whateva')
+    m1 = Milestone.new
+    m2 = Milestone.new
+
+    goal.milestones << [m1,m2]
+    goal.save
+
+    goal.points_complete = 0
+    goal.points_complete.should == 0
+
+    m1.completed_at = DateTime.now
+    m1.save
+
+    goal.save
+
+    goal.points_complete.should == 0
+
+    goal.percent_complete.should == 0
+
+  
+  end
 end

@@ -13,7 +13,11 @@ class Goal < ActiveRecord::Base
   def calculate_points_complete!
     self.points_complete = self.milestones.sum(:point_value, :conditions => ['completed_at IS NOT NULL']) || 0
     milestone_points = self.milestones.sum(:point_value)
-    self.percent_complete = ( (self.points_complete / milestone_points.to_f) * 100 ) unless milestone_points == 0.0
+    if milestone_points > 0 
+      self.percent_complete = ( (self.points_complete / milestone_points.to_f) * 100 )
+    else
+      self.percent_complete = 0.0
+    end
   end
  
   scope :by_plan,
