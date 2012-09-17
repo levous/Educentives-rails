@@ -41,6 +41,15 @@ class MilestonesController < ApplicationController
   # POST /milestones.json
   def create
     @milestone = Milestone.new(params[:milestone])
+
+    if(@milestone.goal_id)
+      goal = Goal.find(@milestone.goal_id)
+      if goal.milestones.count > 1
+        @milestone.position = goal.milestones.maximum(:position) + 1
+      else
+        @milestone.position = 1
+      end
+    end 
     # @goal = Goal.find(params[:goal_id])
     # redirect_to post_path(@goal)
     flash[:notice] = "Successfully created milestone."
