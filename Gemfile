@@ -18,6 +18,8 @@ gem 'carrierwave'
 gem 'rmagick'
 # postegre / database
 gem 'pg'
+# sortable
+gem 'acts_as_list'
 
 # Gems used only for assets and not required
 # in production environments by default.

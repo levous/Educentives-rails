@@ -1,5 +1,5 @@
 class Goal < ActiveRecord::Base
-  has_many :milestones, :dependent => :delete_all
+  has_many :milestones, :dependent => :delete_all, :order =>'position' 
   belongs_to :plan
   validates_presence_of :title
 
@@ -43,7 +43,7 @@ class Goal < ActiveRecord::Base
   end
 
   def nextMilestone
-    milestones.find(:first, :conditions =>"completed_at IS NULL", :order => "created_at ASC")
+    milestones.find(:first, :conditions =>"completed_at IS NULL", :order => "position ASC")
   end
 end
 

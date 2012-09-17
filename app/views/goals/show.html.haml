@@ -15,8 +15,8 @@
 
 %h3 Goal Milestones
 
-#milestones.record-cntr
-  =render @goal.milestones 
+#milestones.record-cntr(data-update-url="#{sort_milestones_url}")
+  = render @goal.milestones 
 
 %h2 Add a Milestone
 

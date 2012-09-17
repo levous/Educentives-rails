@@ -56,6 +56,13 @@ class MilestonesController < ApplicationController
     end
   end
 
+  def sort
+    params[:milestone].each_with_index do |id, index|
+      Milestone.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
+  end
+
   # PUT /milestones/1
   # PUT /milestones/1.json
   def update

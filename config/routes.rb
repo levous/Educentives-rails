@@ -30,7 +30,9 @@ Source::Application.routes.draw do
 
   resources :rewards
 
-  resources :milestones
+  resources :milestones do
+    collection { post :sort }
+  end
 
   match 'milestones/:id/complete', :to => 'milestones#complete'
 
