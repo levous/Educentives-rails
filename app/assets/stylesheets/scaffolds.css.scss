@@ -3,7 +3,6 @@ $med-blue: #7c9aae;
 $dark-blue: #18204C;
 $dark-green: #327c24;
 $label-color: #ccc;
-$right-pane-bg-img: image-url('background/forest-trail-transparent.png');
 
 // layout and general //-----------------------------------------
 
@@ -38,7 +37,7 @@ h1, h2, h3, h4, h5{
 #content{
   margin:0 auto;
   width:960px;
-  background: $right-pane-bg-img no-repeat scroll bottom right $light-blue;
+  background: image-url('background/forest-trail-transparent.png') no-repeat scroll bottom right $light-blue;
   border-radius: 10px;
   
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
