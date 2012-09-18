@@ -20,13 +20,13 @@
     %br/
     = f.number_field :point_value
   .field
-    = f.label :target_datetime
-    %br/
-    = f.datetime_select :target_datetime
+    = f.label :target_datetime, 'Target Date'
+    %br
+    = f.text_field :target_datetime, :class => "datetime-field"
   .field
     = f.label :completed_at
     %br/
-    = f.datetime_select :completed_at
+    = f.text_field :completed_at, :class => "datetime-field"
   .field
     = f.label :goal
     %br/
