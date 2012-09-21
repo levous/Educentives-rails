@@ -15,6 +15,7 @@ gem "dynamic_form"
 
 # uploader
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
 gem 'rmagick'
 # postegre / database
 gem 'pg'
