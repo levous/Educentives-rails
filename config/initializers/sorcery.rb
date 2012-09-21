@@ -99,6 +99,12 @@ Rails.application.config.sorcery.configure do |config|
                                                                                       # available options.
 
     # user.subclasses_inherit_config = false                                          # make this configuration
+
+    # -- user case insensitive
+    user.downcase_username_before_authenticating = true                               # downcase the username before 
+                                                                                      # trying to authenticate, default
+                                                                                      # is false
+
                                                                                       # inheritable for subclasses.
                                                                                       # Useful for ActiveRecord's STI.
 
