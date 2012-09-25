@@ -1,11 +1,13 @@
 [Twitter bootstrap for easy, slick responsive design](http://twitter.github.com/bootstrap)
 
 NEED TODO:
-modified the goal to default the plan so that the wizard is not duplicating goal controller logic
-However, the student associated with the goal's plan needs to be assigned.  current_user is not available in the model
-So we need to pass the user into the goal.create method.  This makes sense. In both use cases, the goal's pursuer is known so should be passed in
+Add ability to optionally create a score target for a goal. The UI should allow for assigning the target label and target score
+example
+  label:wpm
+  target_score:13
 
+Each milestone, when the goal has a target score, should allow entering a score that is less than or equal to the goal target score
+Changing the goal target score should validate the milestones target scores do not exceed the goal target 
+an assessment should be recordable from the goal overview screen
 
-fix milestone edit to use datetime picker with nullable capability
-  or possibly abstract into partial that understands completing and uncompleting rather than worrying about date selection
 
