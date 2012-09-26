@@ -9,7 +9,7 @@ class GoalsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @goals }
-    enC
+    end
   end
 
   # GET /goals/1

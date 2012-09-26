@@ -1,0 +1,9 @@
+- if @assessment.errors.any?
+  // hide the flash notice div
+  $("#flash_notice").hide(300);
+  // update the html of the errors div and show it
+  $("#assessment_errors").html("#{escape_javascript(error_messages_for(@assessment))}").show(300);
+- else
+  $("#assessment_errors").hide(300);
+  $("#flash_notice").html("#{escape_javascript(flash[:notice])}").show(300);
+  alert("SCORE!");

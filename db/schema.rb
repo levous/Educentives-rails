@@ -11,11 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120915212032) do
+ActiveRecord::Schema.define(:version => 20120925161351) do
 
   create_table "advocacies", :force => true do |t|
     t.string   "relationship"
     t.integer  "person_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "assessments", :force => true do |t|
+    t.integer  "goal_id"
+    t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20120915212032) do
     t.datetime "updated_at"
     t.integer  "points_complete"
     t.decimal  "percent_complete"
+    t.integer  "target_score"
+    t.string   "target_label"
   end
 
   create_table "milestones", :force => true do |t|
@@ -43,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20120915212032) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.integer  "target_score"
   end
 
   create_table "people", :force => true do |t|

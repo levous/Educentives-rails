@@ -5,6 +5,7 @@
 
   %em The Journey 
   = render @goal
+  = link_to 'Edit', edit_goal_path(@goal)
 
 .record-cntr
   %em The Prize
@@ -24,8 +25,6 @@
   = form_for(@goal.milestones.build, :remote => true) do |f|
     #milestone_errors{:style=>'display:none'}
     %fieldset
-      %legend
-        Milestone
       .field
         = f.label :title 
         %br
@@ -46,6 +45,6 @@
       .actions
         = f.hidden_field :goal_id 
         = f.submit
-
-  = link_to 'Edit', edit_goal_path(@goal)
-  = link_to 'Back', goals_path 
+%h2 Add an Assessment
+.record-cntr
+  = render :partial => '/assessments/form', :locals => { :goal => @goal, :assessment => @goal.assessments.build }

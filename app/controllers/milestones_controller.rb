@@ -92,6 +92,7 @@ class MilestonesController < ApplicationController
     @milestone = Milestone.find(params[:id])
     @milestone.completed_at = DateTime.now
     @milestone.save
+    @milestone.goal.save
 
     flash[:notice] = "Successfully completed milestone."
     respond_to do |format|
