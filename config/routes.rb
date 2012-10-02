@@ -1,12 +1,11 @@
 Source::Application.routes.draw do
   match 'about/(:page_name)' => 'content#about', :as => :about
 
-
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   get "goals/wizard" => "goals#new", :as => "goal_wizard"
-  
+
   resources :users
 
   resources :sessions
@@ -15,7 +14,10 @@ Source::Application.routes.draw do
 
   resources :plans do
     resources :goals do
-      resources :assessments
+      resources :assessments 
+      member do
+        get 'progress'
+      end
     end
   end
   resources :sponsorships
@@ -39,9 +41,7 @@ Source::Application.routes.draw do
   match 'milestones/:id/complete', :to => 'milestones#complete'
 
   resources :goals
-  
 
-  
   resources :goal, :has_many => [:milestones]
   
   root :to => "home#index"

@@ -98,4 +98,8 @@ class GoalsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def progress
+
+  end
 end

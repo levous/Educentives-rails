@@ -29,4 +29,8 @@ class AssessmentsController < ApplicationController
       end
     end
   end
+
+  def progresChart
+
+  end
 end

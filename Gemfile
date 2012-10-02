@@ -31,6 +31,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "flot-rails"
 
 group :development, :test do
   gem 'sqlite3'

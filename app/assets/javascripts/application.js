@@ -9,6 +9,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require_tree .
+//= require jquery.flot
+//= require jquery.flot.resize
+
 $(function(){
 	//$('.datetime-field').datetimepicker(datetimepicker({dateFormat: 'mm-dd-yyyy', ampm: true});
 	$('.datetime-field').datepicker({
