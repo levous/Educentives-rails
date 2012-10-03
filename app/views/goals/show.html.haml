@@ -45,6 +45,10 @@
       .actions
         = f.hidden_field :goal_id 
         = f.submit
-%h2 Add an Assessment
+%h2 Progress
+#progress-chart-cntr
+  = link_to 'Show Chart', progress_plan_goal_path(@goal.plan, @goal), :remote => true 
+
+%h3 Add an Assessment
 .record-cntr
   = render :partial => '/assessments/form', :locals => { :goal => @goal, :assessment => @goal.assessments.build }

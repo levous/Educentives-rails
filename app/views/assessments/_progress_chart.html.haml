@@ -1,14 +1,31 @@
-= content_tag :div, '', id: 'progress-chart', data: {assessments: @assessment_scores}
+%h3
+  Progress Chart for: 
+  = @goal.title
+  %br
+  = "goal: #{@goal.target_score} #{@goal.target_label}" unless @goal.target_score.blank?
+  
+= content_tag :div, '', id: 'progress-chart', data: {assessments: @goal.assessment_scores}
+- if @show_mistakes_and_adjusted_score
+  :javascript  
+    Morris.Line({
+      element: 'progress-chart',
+      data: $('#progress-chart').data('assessments'),
+      xkey: 'date',
+      ykeys: ['score', 'mistakes', 'adj'],
+      labels: ['Score', 'Mistakes', 'Adjusted'],
+      lineColors: ['#167f39','#044c29', '#802211'],
+      lineWidth: 2
+    });
+- else
+  :javascript
+    Morris.Line({
+      element: 'progress-chart',
+      data: $('#progress-chart').data('assessments'),
+      xkey: 'date',
+      ykeys: ['score'],
+      labels: ['Score'],
+      lineColors: ['#167f39'],
+      lineWidth: 2
+    });
 
 
-:javascript
-  // quarterly data, custom colors, skinny lines
-  Morris.Line({
-    element: 'progress-chart',
-    data: $('#progress-chart').data('assessments'),
-    xkey: 'date',
-    ykeys: ['score', 'mistakes', 'adj'],
-    labels: ['Score', 'Mistakes', 'Adjusted'],
-    lineColors: ['#167f39','#044c29', '#802211'],
-    lineWidth: 2
-  });

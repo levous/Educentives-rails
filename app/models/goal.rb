@@ -46,5 +46,15 @@ class Goal < ActiveRecord::Base
   def nextMilestone
     milestones.find(:first, :conditions =>"completed_at IS NULL", :order => "position ASC")
   end
+
+  def assessment_scores
+    assessment_scores = [] 
+    self.assessments.each do |assessment|
+      hash = { :date => assessment.created_at, :score => assessment.score, :mistakes => 0, :adj =>  assessment.score - 0 }
+      assessment_scores.push(hash) 
+    end
+    assessment_scores
+  end
+
 end
 
