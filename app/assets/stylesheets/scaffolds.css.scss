@@ -3,7 +3,7 @@ $med-blue: #7c9aae;
 $dark-blue: #18204C;
 $dark-green: #327c24;
 $label-color: #ccc;
-
+$light-grey: #fafafa;
 // layout and general //-----------------------------------------
 
 body {
@@ -324,6 +324,7 @@ nav a:hover, #authentication a:hover{
 .record{
   padding:10px 0;
   border-bottom:1px solid #f3f3f3;
+  border-top:1px solid #ffffff;
 }
 
 .record-label{
@@ -460,5 +461,5 @@ table.meta-data{
 .indent{margin-left:5em;}
 
 // statuses -------------
-
+.todo{background-color:$light-grey}
 .completed{background-color:#eeffee;}
