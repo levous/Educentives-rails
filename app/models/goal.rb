@@ -1,6 +1,6 @@
 class Goal < ActiveRecord::Base
   has_many :milestones, :dependent => :delete_all, :order => 'position' 
-  has_many :assessments, :dependent => :delete_all, :order => 'created_on'
+  has_many :assessments, :dependent => :delete_all, :order => 'created_at'
   belongs_to :plan
   validates_presence_of :title
 

@@ -100,6 +100,11 @@ class GoalsController < ApplicationController
   end
   
   def progress
-
+    @assessment_scores = []
+    @goal = Goal.find(params[:id])
+    @goal.assessments.each do |assessment|
+      hash = { :date => assessment.created_at, :score => assessment.score, :mistakes => 0, :adj =>  assessment.score - 0 }
+      @assessment_scores.push(hash) 
+    end
   end
 end
