@@ -5,7 +5,7 @@
   = "goal: #{@goal.target_score} #{@goal.target_label}" unless @goal.target_score.blank?
   
 = content_tag :div, '', id: 'progress-chart', data: {assessments: @goal.assessment_scores}
-- if @show_mistakes_and_adjusted_score
+- if @show_mistakes_and_adjusted_score #violating YAGNI: in measuring performance, I want to record both score and errors and show the three lines on the chart.  I'm not recording mistakes so this is a future feature...  sorry.  I can't help myself.  If you are reading this, you should delete the first block and the conditional :(
   :javascript  
     Morris.Line({
       element: 'progress-chart',
