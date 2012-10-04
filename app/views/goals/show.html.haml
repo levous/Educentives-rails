@@ -1,11 +1,12 @@
-%h2 Goal
+%h2
+  Goal
+  = link_to image_tag('buttons/edit-button.png'), edit_goal_path(@goal), :style => 'float:right;margin:-7px 10px 5px 5px;'
 #notice=notice
 
 .record-cntr
 
   %em The Journey 
   = render @goal
-  = link_to image_tag('buttons/edit-button.png'), edit_goal_path(@goal)
 
 .record-cntr
   %em The Prize
