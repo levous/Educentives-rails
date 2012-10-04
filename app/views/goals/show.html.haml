@@ -1,11 +1,11 @@
-%h3 Goal
+%h2 Goal
 #notice=notice
 
 .record-cntr
 
   %em The Journey 
   = render @goal
-  = link_to 'Edit', edit_goal_path(@goal)
+  = link_to image_tag('buttons/edit-button.png'), edit_goal_path(@goal)
 
 .record-cntr
   %em The Prize
@@ -14,14 +14,16 @@
   - else
     = link_to 'New Reward', new_reward_path
 
-%h3 Goal Milestones
+%h2 Goal Milestones
 
 #milestones.record-cntr(data-update-url="#{sort_milestones_url}")
   = render @goal.milestones 
 
-%h2 Add a Milestone
-
-.record-cntr
+%h3
+  Add a Milestone
+  %a.vtoggle-trigger(data-toggle-el="milestone-add-panel") 
+    %span +
+#milestone-add-panel.record-cntr
   = form_for(@goal.milestones.build, :remote => true) do |f|
     #milestone_errors{:style=>'display:none'}
     %fieldset
@@ -45,9 +47,18 @@
       .actions
         = f.hidden_field :goal_id 
         = f.submit
+:javascript
+  $(function() {
+    $('#milestone-add-panel').hide();
+    $('.vtoggle-trigger').click(function(){
+      var a = $(this).toggleClass('open');
+      $('#'+a.data('toggle-el')).slideToggle('slow');
+    });
+  });
+
 %h2 Progress
 #progress-chart-cntr
-  = link_to 'Show Chart', progress_plan_goal_path(@goal.plan, @goal), :remote => true 
+  = link_to "Show Chart #{@goal.assessments.count}", progress_plan_goal_path(@goal.plan, @goal), :remote => true unless @goal.assessments.empty?
 
 %h3 Add an Assessment
 .record-cntr

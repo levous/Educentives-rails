@@ -30,6 +30,10 @@ h1, h2, h3, h4, h5{
   margin: 20px 0 10px 0;
 }
 
+h3{
+  line-height:1.6em;
+}
+
 #content-wrapper{
   position:relative;
   width: 100%;}
@@ -120,8 +124,9 @@ a {
   &:visited {
     color: #66f; }
   &:hover {
-    color: #fff;
-    background-color: #000; } }
+    color: #64E6C1;
+  } 
+}
 
 div {
   &.field, &.actions {
@@ -305,6 +310,28 @@ nav a:hover, #authentication a:hover{
     overflow: hidden;
     text-indent: -999em;
     width: 32px;
+}
+
+.vtoggle-trigger{
+  display:inline-block;
+  width:25px;
+  height:25px;
+  background:url(/assets/sprites/button-sprite-24px.png) no-repeat top left;
+  span{
+    display:none;
+  }
+}
+.vtoggle-trigger.open{
+  background-position:-28px 0;
+}
+.vtoggle-trigger:hover{
+  background-image:url(/assets/sprites/button-sprite-2-24px.png);
+  background-color:transparent;
+}
+
+h3 .vtoggle-trigger{
+  float: right;
+  margin: 2px 8px;
 }
 
 
