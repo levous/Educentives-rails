@@ -27,4 +27,18 @@
         = builder.label :replace_image
         = builder.file_field :image 
     .actions
-      = f.submit
+      #submit_button= f.submit
+
+
+      :javascript
+        $(function(){
+          $('#submit_button').hide()
+          $('a#submit_form').click(function(event){
+            event.preventDefault();
+            $('form').submit();
+          });
+        });
+      %a#submit_form.edu-button.arrow-left{ :rel => "nofollow", :href => new_goal_path} 
+        %span.icon-32.arrow-white-32 
+        Create Your Reward
+

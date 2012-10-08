@@ -6,13 +6,13 @@
         = @goal.errors.full_messages.each do |msg|
           %li
             = msg
-  %script
-    \$(function(){
-    \  $('a#submit_form').click(function(){
-    \      $('form').submit();
-    \      return false;
-    \  });
-    \});
+  :javascript
+    $(function(){
+      $('a#submit_form').click(function(event){
+        event.preventDefault();
+        $('form').submit();
+      });
+    });
     
   .wideform
     .field

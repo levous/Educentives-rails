@@ -31,7 +31,8 @@ h1, h2, h3, h4, h5{
 }
 
 h3{
-  line-height:1.6em;
+  line-height:1.7em;
+  padding:0 2px 0 0;
 }
 
 #content-wrapper{
@@ -312,7 +313,7 @@ nav a:hover, #authentication a:hover{
     width: 32px;
 }
 
-.vtoggle-trigger{
+.vtoggle-trigger, .help-trigger{
   display:inline-block;
   width:25px;
   height:25px;
@@ -320,18 +321,28 @@ nav a:hover, #authentication a:hover{
   span{
     display:none;
   }
+  &:hover{
+    background-position-y:-28px;
+    background-color:transparent;
+  }
 }
 .vtoggle-trigger.open{
-  background-position:-28px 0;
-}
-.vtoggle-trigger:hover{
-  background-image:url(/assets/sprites/button-sprite-2-24px.png);
-  background-color:transparent;
+  background-position-x:-28px;
 }
 
-h3 .vtoggle-trigger{
-  float: right;
-  margin: 2px 8px;
+.help-trigger{
+  background-position-y:-56px;
+  &:hover{
+    background-position-y:-84px;
+    background-color:transparent;
+  }
+}
+
+h3{
+  .vtoggle-trigger, .help-trigger{
+    float: right;
+    margin: 2px;
+  }
 }
 
 
