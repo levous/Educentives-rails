@@ -5,6 +5,7 @@ gem 'rails', '3.1.0'
 # templating
 gem "haml"
 gem "rails-boilerplate"
+gem "twitter-bootstrap-rails"
 gem 'coffee-rails', "~> 3.1.0"
 
 # authentication

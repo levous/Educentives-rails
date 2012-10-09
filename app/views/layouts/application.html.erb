@@ -1,110 +1,102 @@
-<!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "+++Educentives+++" %></title>
+    <%= csrf_meta_tags %>
 
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/i/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet" type= "text/css"></link>
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
-  <title>+++Educentives+++</title>
-  <meta name="description" content="">
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
 
-  <!-- Mobile viewport optimized: h5bp.com/viewport -->
-  <meta name="viewport" content="width=device-width">
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
 
-  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet" type= "text/css"></link>
-  <%= stylesheet_link_tag "application" %>
-  <%= csrf_meta_tags %>
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
 
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
+  </head>
+  <body>
 
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <%= javascript_include_tag 'modernizr' %>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div id="header" class="brand">
+            <div id="logo"><%= link_to raw("<span>Educentives</span>"), root_path, :id => 'home-link' %></div>
+            <div id="authentication">
+              <% if current_user %>
+                &nbsp;Logged in as <%= current_user.username %>
+                <%= link_to "Log out", logout_path %>
+              <% else %>
+                <%= link_to "Sign up", signup_path %> or
+                <%= link_to "Log in", login_path %>
+              <% end %>
+            </div><!--/#authenitcation -->
+          </div><!--/#header-->
 
-  <!-- moved js to top so jquery will work.  need to research whether this can be moved to the bottom-->
-  <%= javascript_include_tag 'application' %>
-
-  <!-- Initializes the modernizr and actually perform the checks. Enable this
-       if you need the modernizr, but remember to only do the actual checks
-       that you need. -->
-  <!-- #%= javascript_tag "Modernizr.load();" %>
-</head>
-<body>
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
-
-  <div id="content-wrapper">
-    <div id="header">
-      <div id="logo"><%= link_to raw("<span>Educentives</span>"), root_path, :id => 'home-link' %></div>
-      <div id="authentication">
-        <% if current_user %>
-          &nbsp;Logged in as <%= current_user.username %>
-          <%= link_to "Log out", logout_path %>
-        <% else %>
-          <%= link_to "Sign up", signup_path %> or
-          <%= link_to "Log in", login_path %>
-        <% end %>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
       </div>
     </div>
-    <div id="content">
-      <nav>
-      <ul>
-        <li><%= link_to "Goals", :controller => :goals, :action => :index %></li>
-        <li><%= link_to "About Educentives", about_path %><li>
-        <li><a href="#">another link</a></li>
-        <li><a href="http://dribbble.com/shots/186151-TwoSIX">Style These</a></li>
 
-      </ul>
-      </nav>
-      <div id="content-header">
+    <div class="container">
+      <div class="content">
+        <div class="row">
+           <div class="span9">
+              <%= yield %>
+            </div>
+            <div class="span3">
+              <div class="well sidebar-nav">
+                <h3>Sidebar</h3>
+                <ul class="nav nav-list">
+                  <li class="nav-header">Sidebar</li>
+                  <li><%= link_to "Link1", "/path1"  %></li>
+                  <li><%= link_to "Link2", "/path2"  %></li>
+                  <li><%= link_to "Link3", "/path3"  %></li>
+                </ul>
+              </div><!--/.well -->
+            </div><!--/span-->
+        </div><!--/row-->
+      </div><!--/content-->
 
-        <% flash.each do |key, msg| %>
-          <%= content_tag :div, msg, :class => "flash_notice", :id => key %>
-          <script "text/javascript">
-          $(function() {
-            $('#<%= key %>').hide().fadeIn('slow').click(function(){$(this).fadeOut()});
-          });
-          </script>
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
 
+    </div> <!-- /container -->
 
-        <% end %>
-
-        <div id="flash_notice" class="flash_notice" style="display:none"></div>
-      </div>
-      <div id="content-main">
-      <%= yield %>
-      </div>
-      <div class="clearer"></div>
-
-    </div>
-    <div id="footer">
-
-    </div>
-  </div>
-
-</body>
-  <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
-
-  <% if Rails.env.production? %>
-  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
-  <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
-  <% end %>
-</body>
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
