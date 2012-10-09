@@ -2,15 +2,39 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require reset
- *= require_self
  *= require_tree . 
  *= require jquery.popbox
+ *= require_self
 */
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
 -webkit-appearance: push-button;
 }
+
+
+/* Twitter Bootstrap Overrides */
+.content{
+  margin-top:40px;
+}
+.navbar-inner{
+  background-image: -moz-linear-gradient(top, rgba(255,0,0,0.5), rgba(105,0,0,0.5));
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, rgba(206,240,255,0.8), rgba(115,150,215,0.5));
+  background-image: -webkit-linear-gradient(top, rgba(246,245,255,1.0), rgba(0,0,0,0.5));
+  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  background-color:transparent;
+
+}
+.nav-collapse.in.collapse .nav > li > a, .nav-collapse .dropdown-menu a{
+    background-color: #dEe0eF;
+}
+
+/* Twitter Bootstrap Overrides end */
+
+
+
 .float-right, .float-left{
   margin:10px;
 }

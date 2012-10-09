@@ -1,6 +1,6 @@
 = content_tag_for( :div, milestone, :class => (milestone.completed_at ? 'record completed' : 'record todo')) do
   = link_to(milestone.title, milestone, :class => 'record-title')
-  .row.target
+  .record-row.target
     %span.record-label point value 
     %span.record-value=milestone.point_value||'n/a'
     %span.record-label target date
@@ -9,7 +9,7 @@
         = distance_of_time_in_words_to_now milestone.target_datetime
       - else
         not set
-  .row.created-at
+  .record-row.created-at
     %span.record-label created 
     %span.record-value #{distance_of_time_in_words_to_now milestone.created_at} ago
     %span.record-label completed at 

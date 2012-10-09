@@ -1,9 +1,9 @@
 = div_for(reward, :class => 'record') do
-  .row.title.record-title
+  .record-row.title.record-title
     = link_to_unless_current(reward.title, reward)
-  .row
+  .record-row
     %span.record-label Point Value
     %span.record-value= reward.point_value||'n/a'
-  .row
+  .record-row
     = link_to image_tag(reward.reward_photo.image), reward_photo_path(reward.reward_photo) if reward.reward_photo.present? && reward.reward_photo.image.present?
   

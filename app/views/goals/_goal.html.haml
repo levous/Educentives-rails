@@ -12,19 +12,19 @@
           = distance_of_time_in_words_to_now goal.target_datetime if goal.target_datetime  
         %td.completed-cell
           = goal.completed_at || number_to_percentage(goal.percent_complete, :precision => 1) 
-  .row.title.record-title
+  .record-row.title.record-title
     = link_to_unless_current(goal.title, goal)
 
   - if url_for() == url_for(goal) && goal.long_description.present?
-    .row.description
+    .record-row.description
       .record-label Description
       = goal.long_description
-  .row
+  .record-row
     = image_tag goal.plan.reward.reward_photo.image_url(:thumb_small) if goal.plan.reward.reward_photo && goal.plan.reward.reward_photo.image? 
-  .row.life-span
+  .record-row.life-span
     %span.record-label Created 
     %span.record-value #{distance_of_time_in_words_to_now goal.created_at} ago
-  .row.plan
+  .record-row.plan
     %span.record-label Plan
     - if goal.plan
       %span.record-value= link_to goal.plan.title, goal.plan
@@ -32,7 +32,7 @@
       Unplanned
 
   - if url_for() != url_for(goal) && !goal.milestones.empty?
-    .row.description
+    .record-row.description
       .record-label Next Milestone
       .indent
         - if goal.nextMilestone.nil?
