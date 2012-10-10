@@ -78,6 +78,19 @@
         <div class="row">
           <div class="span9">
             <div class="well">
+              <% flash.each do |key, msg| %>
+                <%= content_tag :div, msg, :class => "flash_notice", :id => key %>
+                <script "text/javascript">
+                $(function() {
+                  $('#<%= key %>').hide().fadeIn('slow').click(function(){$(this).fadeOut()});
+                });
+                </script>
+
+
+              <% end %>
+
+              <div id="flash_notice" class="flash_notice" style="display:none"></div>
+
               <%= yield %>
             </div>
           </div>
@@ -86,7 +99,7 @@
               <h3>Sidebar</h3>
               <ul class="nav nav-list">
                 <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
+                <li><%= link_to "Goals", :controller => :goals, :action => :index %></li>
                 <li><%= link_to "Link2", "/path2"  %></li>
                 <li><%= link_to "Link3", "/path3"  %></li>
               </ul>
