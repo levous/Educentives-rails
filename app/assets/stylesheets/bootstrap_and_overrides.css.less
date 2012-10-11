@@ -30,3 +30,79 @@ body {
 //
 // Example:
 // @linkColor: #ff0000;
+@gridGutterWidth: 8px;
+@gridGutterWidth1200: 20px;
+@gridGutterWidth768:  10px;
+
+// Base class
+.well {
+  padding: 8px;
+  .border-radius(8px);
+}
+
+@media (max-width: 767px) {
+  [class*="span"] {
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  [class*="span"] {
+    margin-left: 3px;
+  }
+  .span3 {
+    width: 158px;
+  }
+
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+  [class*="span"] {
+    margin-left: 8px;
+  }
+  .span3 {
+    width: 188px;
+  }
+  .content{
+    margin-top:40px;
+  }
+}
+
+@media (min-width: 1200px){
+  [class*="span"] {
+    margin-left: 10px;
+  }
+  .row{
+     margin-left: -15px;
+  }
+  .span3 {
+    width: 256px;
+  }
+  .content{
+    margin-top:40px;
+  }
+
+}
+
+
+.navbar{
+  border-bottom: solid 1px #64C1E6;
+}
+
+.navbar-inner{
+  background-image: -moz-linear-gradient(top, rgba(255,0,0,0.5), rgba(105,0,0,0.5));
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, rgba(206,240,255,0.8), rgba(115,150,215,0.5));
+  background-image: -webkit-linear-gradient(top, rgba(246,245,255,1.0), rgba(0,0,0,0.5));
+  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  background-color:transparent;
+
+}
+
+.nav-collapse.in.collapse .nav > li > a, .nav-collapse .dropdown-menu a{
+    background-color: #dEe0eF;
+}
+
+
