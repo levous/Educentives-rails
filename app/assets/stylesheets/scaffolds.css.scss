@@ -38,8 +38,12 @@ h3{
 
 #content-wrapper{
   position:relative;
-  width: 100%;}
+  width: 100%;
+}
 
+#content-main{
+  background: #ffffff url("/assets/background/linen-tile-trans.png"); 
+}
 #main-content{
   min-height: 20px;
   padding: 10px;
@@ -69,20 +73,6 @@ h3{
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
   position:relative;}
 
-#content-main{
-  background: url("/assets/background/linen-tile-trans.png") repeat scroll right top #FFFFFF;
-  border-radius: 10px;
-  border: 1px solid #FFFFFF;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  float: left;
-  height: 100%;
-  min-height: 700px;
-  position: relative;
-  width: 600px;
-  padding:10px;
-  margin: -2px 0 -2px 0;
-}
 
 #content-header{
    background: url("/assets/background/wide-gloss.png") no-repeat scroll center top;
