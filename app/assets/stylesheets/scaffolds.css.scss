@@ -57,6 +57,7 @@ input[type="color"],
 #content-main{
   background: #ffffff url("/assets/background/linen-tile-trans.png"); 
   position:relative;
+  border-radius:8px;
 }
 
 #content-wrapper{
@@ -66,24 +67,29 @@ input[type="color"],
   padding: 3px;
 }
 
-@media (max-width: 767px){
+@media (max-width: 480px){
+  #content-wrapper{
+    margin-right:-15px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
   #content-wrapper{
-    padding:3px 0;
+    padding:3px;
   }
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
   #content-wrapper{
-    padding:8px 0;
+    padding:9px;
+    margin-top: 30px;
   }
 }
 
 @media (min-width: 1200px){
   #content-wrapper{
-    padding:10px 0;
+    padding:10px;
+    margin-top: 30px;
   }
 }
 
@@ -171,9 +177,8 @@ a#home-link:hover{background-color:transparent;}
     border-radius: 7px 7px 7px 7px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
     float: right;
-    margin: 8px;
+    margin: 8px 20px 5px 8px;
     padding: 2px;
-	
 }
 
 #authentication a{

@@ -40,7 +40,7 @@
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container">
+        <div class="container-fluid">
 
           <div id="logo"><%= link_to raw("<span>Educentives</span>"), root_path, :id => 'home-link' %></div>
 
@@ -70,25 +70,27 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="content">
-        <div class="row" id="content-wrapper">
+    <div class="container-fluid">
+      <div id="content-wrapper">
+        <div class="row-fluid">
           <div class="span9">
-            <div class="well" id="content-main">
-              <% flash.each do |key, msg| %>
-                <%= content_tag :div, msg, :class => "flash_notice", :id => key %>
-                <script "text/javascript">
-                $(function() {
-                  $('#<%= key %>').hide().fadeIn('slow').click(function(){$(this).fadeOut()});
-                });
-                </script>
+            <div  id="content-main">
+              <div class="well">
+                <% flash.each do |key, msg| %>
+                  <%= content_tag :div, msg, :class => "flash_notice", :id => key %>
+                  <script "text/javascript">
+                  $(function() {
+                    $('#<%= key %>').hide().fadeIn('slow').click(function(){$(this).fadeOut()});
+                  });
+                  </script>
 
 
-              <% end %>
+                <% end %>
 
-              <div id="flash_notice" class="flash_notice" style="display:none"></div>
+                <div id="flash_notice" class="flash_notice" style="display:none"></div>
 
-              <%= yield %>
+                <%= yield %>
+              </div>
             </div>
           </div>
           <div class="span3">
@@ -100,8 +102,8 @@
               </ul>
             </div><!--/.well -->
           </div><!--/span3-->
-        </div><!--/row-->
-      </div><!--/content-->
+        </div><!--/row-fluid-->
+      </div><!--/#content-wrapper-->
 
       <footer>
         <p>&copy; Company 2012</p>
