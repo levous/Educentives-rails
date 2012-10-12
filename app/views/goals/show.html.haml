@@ -21,11 +21,10 @@
   = render @goal.milestones 
 
 %h3
-  = render :partial => '/shared/popbox', :locals => {:pop_content => 'Milestones are incremental steps you will take to reach your overall goal.'}, :style => 'float:left;'
   Add a Milestone
   %a.vtoggle-trigger(data-toggle-el="milestone-add-panel") 
     %span +
-
+  = render :partial => '/shared/popbox', :locals => {:pop_content => 'Milestones are incremental steps you will take to reach your overall goal.', :pop_title => 'Milestones', :pop_placement => 'left'}, :style => 'float:left;'
 #milestone-add-panel.record-cntr
   = form_for(@goal.milestones.build, :remote => true) do |f|
     #milestone_errors{:style=>'display:none'}
