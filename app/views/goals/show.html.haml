@@ -7,7 +7,7 @@
 
   %em The Journey
   .progress.progress-striped
-    .bar.bar-success{ :style => "width: #{number_to_percentage(@goal.percent_complete, :precision => 1)}"}= "#{number_to_percentage(@goal.percent_complete, :precision => 1)} complete"
+    .bar.bar-success{ :style => "width: #{number_to_percentage(@goal.percent_complete, :precision => 1)}"}= "#{number_to_percentage(@goal.percent_complete, :precision => 0)} complete"
     .bar.bar-info{ :style => "width: #{number_to_percentage(100 - @goal.percent_complete, :precision => 1)}"}
 
 

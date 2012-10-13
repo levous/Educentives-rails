@@ -1,4 +1,4 @@
-= content_tag_for( :div, goal, :class => 'record') do
+= content_tag_for( :div, goal ) do
   .float-right
     %table.meta-data
       %tr
@@ -11,7 +11,7 @@
         %td
           = distance_of_time_in_words_to_now goal.target_datetime if goal.target_datetime  
         %td.completed-cell
-          = goal.completed_at || number_to_percentage(goal.percent_complete, :precision => 1) 
+          = goal.completed_at || number_to_percentage(goal.percent_complete, :precision => 0) 
   .record-row.title.record-title
     = link_to_unless_current(goal.title, goal)
 

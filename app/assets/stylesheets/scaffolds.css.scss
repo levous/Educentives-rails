@@ -103,7 +103,7 @@ input[type="color"],
   }
 
   #logo{
-  	width: 101px;
+    width: 101px;
     background: url(/assets/educentives-small.png) no-repeat;
     height: 36px;
     min-height: 36px;
@@ -127,7 +127,7 @@ input[type="color"],
 @media (min-width: 1200px){
   #content-wrapper{
     padding:10px;
-    margin-top: 45px;
+    margin: 40px 20px;
   }
 }
 
@@ -492,11 +492,12 @@ a.record-title{
     list-style: square; } }
 
 table.meta-data{
-  width:300px;
+  width:260px;
   td, th{
     padding:5px;
     margin:1px;
     background-color:#eeeeee;
+    text-align: center;
   }
   td{
     border-top: solid 1px $med-blue;
