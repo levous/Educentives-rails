@@ -1,6 +1,6 @@
 @import "twitter/bootstrap/bootstrap";
 body { 
-	padding-top: 60px;
+	padding: 60px 0 0 0;
 }
 
 @import "twitter/bootstrap/responsive";
@@ -36,8 +36,8 @@ body {
 
 @media (max-width: 767px){
   body {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -51,6 +51,11 @@ body {
 }
 
 .navbar .btn-navbar {
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+margin-left: 0;
+margin-right: 0;
 }
 
 @media (max-width: 979px){

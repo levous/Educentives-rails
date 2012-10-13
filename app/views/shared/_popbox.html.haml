@@ -1,8 +1,7 @@
-.popbox
-  %a.help-trigger.open{:href => "#"}
-  .collapse
-    .box
-      .a.record-row
-      .a.record-row-border
-      = pop_content
-      %a.close{:href => "#"} close
+- popover_placement = (defined? pop_placement) ? pop_placement : 'bottom'
+%a{:href => '#nada', :class => "help-trigger",
+  :rel => "popover",
+  :'data-content' => "#{pop_content}",
+  :'data-original-title' => "#{pop_title}",
+  :'data-placement' => "#{popover_placement}"}
+ 
