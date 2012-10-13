@@ -34,10 +34,19 @@ body {
 @gridGutterWidth1200: 20px;
 @gridGutterWidth768:  10px;
 
+.well{
+  border-radius:8px;
+}
+
+.well:last-child{margin-bottom:0}
+
 @media (max-width: 767px){
   body {
     padding-left: 0;
     padding-right: 0;
+  }
+  .well{
+    padding:8px;
   }
 }
 
@@ -45,20 +54,12 @@ body {
   border-bottom: solid 1px #64C1E6;
 }
 
-.well:last-child{margin-bottom:0}
-@media (min-width: 980px){
-  .well{
-    border-radius:8px;
-    padding:8px;
-  }
-}
-
 .navbar .btn-navbar {
 }
 
 .navbar-fixed-top, .navbar-fixed-bottom {
-margin-left: 0;
-margin-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @media (max-width: 979px){
@@ -80,7 +81,7 @@ margin-right: 0;
 }
 
 .nav-collapse.in.collapse .nav > li > a, .nav-collapse .dropdown-menu a{
-    background-color: #dEe0eF;
+  background-color: #dEe0eF;
 }
 
 
