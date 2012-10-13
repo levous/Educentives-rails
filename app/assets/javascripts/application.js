@@ -12,12 +12,10 @@
 //= require raphael
 //= require morris
 //= require jquery.transit
-//= require jquery.popbox
 
 $(function(){
   //$('.datetime-field').datetimepicker(datetimepicker({dateFormat: 'mm-dd-yyyy', ampm: true});
   $('.datetime-field').datepicker({
     dateFormat: "yy-mm-dd"
   });
-  $('.popbox').popbox();
 });
