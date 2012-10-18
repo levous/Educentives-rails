@@ -1,0 +1,42 @@
+= form_for(@goal) do |f|
+  - if @goal.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@goal.errors.count, "error")
+        prohibited this goal from being saved:
+      %ul
+        - @goal.errors.full_messages.each do |msg|
+          %li= msg
+  %fieldset
+    %legend Goal
+    .field
+      %div= f.label :title
+      %div= f.text_field :title
+    .field
+      %div= f.label :long_description
+      %div= f.text_area :long_description
+    .field
+      %div= f.label :point_value
+      %div= f.number_field :point_value
+    .field
+      %div= f.label :target_datetime
+      %div= f.text_field :target_datetime, :class => "datetime-field", :value => @goal.try(:target_datetime).try(:strftime,'%Y-%m-%d')
+    .field
+      %div= f.label :completed_at
+      %div= f.text_field :completed_at, :class => 'datetime-field', :value => @goal.try(:complete_at).try(:strftime,'%Y-%m-%d')
+    .field
+      %div= f.label :plan_id
+      %div= f.number_field :plan_id
+    %strong
+      Support Assessment Scoring 
+      %a.vtoggle-trigger.pull-right(data-toggle-el="measure-panel") 
+        %span +
+      #measure-panel.load-hidden
+        .field
+          = f.label :target_label
+          = f.text_field :target_label
+        .field
+          = f.label :target_score
+          = f.number_field :target_score
+    .actions
+      = f.submit

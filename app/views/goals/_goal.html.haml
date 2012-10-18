@@ -30,6 +30,12 @@
       %span.record-value= link_to goal.plan.title, goal.plan
     - else
       Unplanned
+  - if goal.target_score
+    .record-row
+      %span.record-label Target
+      %span.record-value #{goal.target_score} #{goal.target_label}
+
+
 
   - if url_for() != url_for(goal) && !goal.milestones.empty?
     .record-row.description

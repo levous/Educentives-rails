@@ -18,4 +18,9 @@ $(function(){
   $('.datetime-field').datepicker({
     dateFormat: "yy-mm-dd"
   });
+  $('.load-hidden').hide();
+  $('.vtoggle-trigger').click(function(){
+    var a = $(this).toggleClass('open');
+    $('#'+a.data('toggle-el')).slideToggle('slow');
+  });
 });

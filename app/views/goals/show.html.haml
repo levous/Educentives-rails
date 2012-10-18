@@ -30,7 +30,7 @@
   %a.vtoggle-trigger(data-toggle-el="milestone-add-panel") 
     %span +
   = render :partial => '/shared/popbox', :locals => {:pop_content => 'Milestones are incremental steps you will take to reach your overall goal.', :pop_title => 'Milestones', :pop_placement => 'left'}, :style => 'float:left;'
-#milestone-add-panel.record-cntr
+#milestone-add-panel.record-cntr.load-hidden
   = form_for(@goal.milestones.build, :remote => true) do |f|
     #milestone_errors{:style=>'display:none'}
     %fieldset
@@ -56,11 +56,7 @@
         = f.submit
 :javascript
   $(function() {
-    $('#milestone-add-panel').hide();
-    $('.vtoggle-trigger').click(function(){
-      var a = $(this).toggleClass('open');
-      $('#'+a.data('toggle-el')).slideToggle('slow');
-    });
+    
   });
 
 %h2 Progress

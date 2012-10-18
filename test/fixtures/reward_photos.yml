@@ -2,10 +2,10 @@
 
 one:
   title: MyString
-  url_path: 1
+  image: 'someurl'
   reward_id: 1
 
 two:
   title: MyString
-  url_path: 1
+  image: 'anotherurl'
   reward_id: 1
