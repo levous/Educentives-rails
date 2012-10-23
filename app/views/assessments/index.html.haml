@@ -1,1 +1,9 @@
-Hi
+%h2 Assessments
+.record-cntr
+  - @assessments.each do |assessment|
+    .record
+      .record-row
+        = link_to '', plan_goal_assessment_path(assessment.goal.plan.id, assessment.goal.id, assessment.id), :method => :delete, :class => "delete", :confirm => "Are you sure ?", :class => "pull-right icon-trash"
+        %span.record-label= assessment.score
+        %span.record-value= assessment.created_at
+

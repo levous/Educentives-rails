@@ -1,6 +1,7 @@
 class AssessmentsController < ApplicationController
   def index
-
+    goal = Goal.find(params[:goal_id])
+    @assessments = goal.assessments
   end
     
   def new 
@@ -31,6 +32,18 @@ class AssessmentsController < ApplicationController
   end
 
   def progresChart
+
+  end
+
+  def destroy
+    assessment = Assessment.find(params[:id])
+    goal = assessment.goal
+    assessment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to plan_goal_assessments_url(goal.plan, goal) }
+      format.json { head :ok }
+    end
 
   end
 end
