@@ -10,16 +10,24 @@ Source::Application.routes.draw do
 
   resources :sessions
 
+  resources :plans
+
+  resources :goals do
+    resources :assessments 
+    get 'progress', :on => :member
+  end
+
+  resources :milestones do
+    collection { post :sort }
+    post :complete, :on => :member
+  end
+
+  resources :reward_photos
+
+  resources :rewards
+
   resources :advocacies
 
-  resources :plans do
-    resources :goals do
-      resources :assessments 
-      member do
-        get 'progress'
-      end
-    end
-  end
   resources :sponsorships
 
   resources :teachers
@@ -30,20 +38,6 @@ Source::Application.routes.draw do
 
   resources :people
 
-  resources :reward_photos
-
-  resources :rewards
-
-  resources :milestones do
-    collection { post :sort }
-  end
-
-  match 'milestones/:id/complete', :to => 'milestones#complete'
-
-  resources :goals
-
-  resources :goal, :has_many => [:milestones]
-  
   root :to => "home#index"
 
   # The priority is based upon order of creation:

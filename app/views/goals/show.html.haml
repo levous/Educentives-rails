@@ -54,14 +54,10 @@
       .actions
         = f.hidden_field :goal_id 
         = f.submit
-:javascript
-  $(function() {
-    
-  });
 
 %h2 Progress
 #progress-chart-cntr
-  = link_to "Show Chart #{@goal.assessments.count}", progress_plan_goal_path(@goal.plan, @goal), :remote => true unless @goal.assessments.empty?
+  = link_to "Show Chart #{@goal.assessments.count}", progress_goal_path(@goal), :remote => true unless @goal.assessments.empty?
 
 %h3 Add an Assessment
 .record-cntr
