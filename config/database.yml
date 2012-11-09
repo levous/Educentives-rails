@@ -6,10 +6,12 @@ common: &common
 development:
   <<: *common
   database: educentives_development
+  host: localhost
 
 test: &test
   <<: *common
   database: educentives_test
+  host: localhost
 
 production:
   <<: *common
@@ -18,3 +20,4 @@ production:
 
 cucumber:
   <<: *test
+  host: localhost

@@ -65,7 +65,7 @@ class RewardsController < ApplicationController
     respond_to do |format|
       if @reward.update_attributes(params[:reward])
         if is_wizard
-          format.html { redirect_to @reward.plan.goal, notice: 'Congratulations, you\'ve set up a Goal. Start adding Milestonesi, below, to establish incremental steps toward reaching your goal.'}
+          format.html { redirect_to @reward.plan.goal, notice: 'Congratulations, you\'ve set up a Goal. Start adding Milestones, below, to establish incremental steps toward reaching your goal.'}
           format.json { head :ok }
         else
           format.html { redirect_to @reward, notice: 'Reward was successfully updated.' }
