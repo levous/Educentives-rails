@@ -41,7 +41,7 @@ class AssessmentsController < ApplicationController
     assessment.destroy
 
     respond_to do |format|
-      format.html { redirect_to plan_goal_assessments_url(goal.plan, goal) }
+      format.html { redirect_to goal_assessments_url(goal) }
       format.json { head :ok }
     end
 
