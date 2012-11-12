@@ -27,7 +27,7 @@
   .record-row.plan
     %span.record-label Plan
     - if goal.plan
-      %span.record-value= link_to goal.plan.title, goal.plan
+      %span.record-value= goal.plan.title
     - else
       Unplanned
   - if goal.target_score

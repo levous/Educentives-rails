@@ -289,13 +289,11 @@ nav a:hover, #authentication a:hover{
 
 .edu-button {
     margin: 10px 15px;
-    
     background: -webkit-linear-gradient(top , #73B844, $dark-green) repeat scroll 0 0 $dark-green;
     background:    -moz-linear-gradient(center top , #73B844 50%, $dark-green 100%) repeat scroll 0 0 $dark-green;
     background:    -moz-linear-gradient(top , #fff, $dark-green) repeat scroll 0 0 $dark-green;
     background:     -ms-linear-gradient(center top , #73B844 50%, $dark-green 100%) repeat scroll 0 0 $dark-green;
     background:      -o-linear-gradient(center top , #73B844 50%, $dark-green 100%) repeat scroll 0 0 $dark-green;
-    
     border: 3px solid #eee;
     font-size: 26px;
     padding: 8px 25px;
@@ -322,7 +320,13 @@ nav a:hover, #authentication a:hover{
 }
 
 .edu-button:hover {
-    background: -moz-linear-gradient(center top , $dark-green 50%, #73B844 100%) repeat scroll 0 0 #73B844;
+    background: -webkit-linear-gradient(top , $dark-green, #73B844 ) repeat scroll 0 0 $dark-green;
+    background:    -moz-linear-gradient(center top , $dark-green 50%, #73B844 100%) repeat scroll 0 0 #73B844;
+    background:     -ms-linear-gradient(center top , $dark-green 50%, #73B844 100%) repeat scroll 0 0 $dark-green;
+    background:      -o-linear-gradient(center top , $dark-green 50%, #73B844 100%) repeat scroll 0 0 $dark-green;
+    text-decoration:none;
+    color:#eeffee;
+
 }
 .edu-button.cancel {
     background: -moz-linear-gradient(center top , #999488 50%, #888888 100%) repeat scroll 0 0 #888888;
