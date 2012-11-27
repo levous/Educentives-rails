@@ -15,8 +15,9 @@ Source::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
-
+  #config.assets.compile = false
+  # changed per http://stackoverflow.com/questions/7252872/upgrade-to-rails-3-1-0-from-rc6-asset-precompile-fails
+  config.assets.compile = true
   # Generate digests for assets URLs
   config.assets.digest = true
 
