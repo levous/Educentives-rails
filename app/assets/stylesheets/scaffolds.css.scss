@@ -28,11 +28,13 @@ h1, h2, h3, h4, h5{
   letter-spacing: -1px;
   line-height: 1.1em;
   margin: 20px 0 10px 0;
+  padding:0 5px;
+  border-radius:4px;
 }
 
 h3{
   line-height:1.7em;
-  padding:0 2px 0 0;
+  padding:0 2px 0 3px;
 }
 
 select,
@@ -546,3 +548,14 @@ table.meta-data{
 // statuses -------------
 .todo{background-color:$light-grey}
 .completed{background-color:#eeffee;}
+
+// on the login page ---- 
+#login-ctrl-cntr label, #login-ctrl-cntr > .input{
+  float:left;
+  margin:5px;
+
+}
+
+#login-ctrl-cntr .actions{
+    float:right;
+}

@@ -31,6 +31,10 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   -moz-box-shadow: 5px 5px 5px #888;
   -webkit-box-shadow:5px 5px 5px #888;
   box-shadow: 5px 5px 5px #888;
-
+  margin:5px;
+  border-radius:3px;
 }
 
+.tilt{
+  -webkit-transform: rotate(1deg); 
+}

@@ -5,5 +5,5 @@
     %span.record-label Point Value
     %span.record-value= reward.point_value||'n/a'
   .record-row
-    = link_to image_tag(reward.reward_photo.image), reward_photo_path(reward.reward_photo) if reward.reward_photo.present? && reward.reward_photo.image.present?
+    .photo.tilt= link_to image_tag(reward.reward_photo.image), reward_photo_path(reward.reward_photo) if reward.reward_photo.present? && reward.reward_photo.image.present?
   
