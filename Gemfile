@@ -10,6 +10,9 @@ gem "therubyracer"
 gem "less-rails"
 gem 'coffee-rails', "~> 3.1.0"
 
+gem "jquery-ui-rails"
+gem 'jquery-rails'
+
 # authentication
 gem 'sorcery'
 # mocking
@@ -33,7 +36,6 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
 
 group :development, :test do
   gem 'sqlite3'

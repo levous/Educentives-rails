@@ -5,9 +5,9 @@
 // the compiled file.
 //
 //= require plugins
+//= require jquery.ui.all
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require jquery-ui
 //= require_tree .
 //= require raphael
 //= require morris

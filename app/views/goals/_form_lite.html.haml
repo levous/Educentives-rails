@@ -26,7 +26,7 @@
       Does this goal involve pursuing performance scores?
       %a.vtoggle-trigger(data-toggle-el="assessments-track-panel") 
         %span +
-      = render :partial => '/shared/popbox', :locals => {:pop_content => 'reading a book is a milestone but reading 12 pages per day might be a target score.  You might want to sink 10 free throws per minute so you may want to record where you are and what score you achieve each session.', :pop_title => 'Assessments', :pop_placement => 'left'}, :style => 'float:left;'
+      = render :partial => '/shared/popbox', :locals => {:pop_content => 'Reading a book is a milestone but reading 12 pages per day might be a target score.  Say you want to sink 10 free throws per minute.  You should record where you are and what score you achieve each session.', :pop_title => 'Assessments', :pop_placement => 'left'}, :style => 'float:left;'
     #assessments-track-panel.record-cntr.load-hidden
       = f.label :target_score
       = f.text_field :target_score
