@@ -6,6 +6,8 @@ gem 'rails', '3.1.0'
 gem "haml"
 gem "rails-boilerplate"
 gem "twitter-bootstrap-rails"
+gem "therubyracer"
+gem "less-rails"
 gem 'coffee-rails', "~> 3.1.0"
 
 # authentication
@@ -36,7 +38,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'debugger'
   gem 'pry'
