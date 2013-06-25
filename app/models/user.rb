@@ -1,3 +1,5 @@
+require 'email_format_validator'
+
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   belongs_to :person
@@ -6,6 +8,6 @@ class User < ActiveRecord::Base
   
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
-  validates_presence_of :email
+  validates :email, :presence => true, :uniqueness => true, :email_format => true
   validates_uniqueness_of :email, :username,  :case_sensitive => false
 end
