@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    label:
+      goal:
+        target_label: "Score Label (BPM, points, etc)"
+        target_score: "Target Score"

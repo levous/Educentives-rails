@@ -54,11 +54,11 @@
       .actions
         = f.hidden_field :goal_id 
         = f.submit
-
-%h2 Progress
-#progress-chart-cntr
+- if @goal.target_score.present? || @goal.target_label.present?
+  %h2 Progress
+  #progress-chart-cntr
   = link_to "Show Chart #{@goal.assessments.count}", progress_goal_path(@goal), :remote => true unless @goal.assessments.empty?
 
-%h3 Add an Assessment
-.record-cntr
-  = render :partial => '/assessments/form', :locals => { :goal => @goal, :assessment => @goal.assessments.build }
+  %h3 Add an Assessment
+  .record-cntr
+    = render :partial => '/assessments/form', :locals => { :goal => @goal, :assessment => @goal.assessments.build }

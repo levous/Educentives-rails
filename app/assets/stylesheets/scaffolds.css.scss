@@ -368,7 +368,7 @@ nav a:hover, #authentication a:hover{
     display:none;
   }
   &:hover{
-    background-position-y:-28px;
+    background-position:0 -28px;
     background-color:transparent;
   }
 }
@@ -377,9 +377,9 @@ nav a:hover, #authentication a:hover{
 }
 
 .help-trigger{
-  background-position-y:-56px;
+  background-position:0 -56px;
   &:hover{
-    background-position-y:-84px;
+    background-position:0 -84px;
     background-color:transparent;
   }
 }
